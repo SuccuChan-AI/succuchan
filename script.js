@@ -60,6 +60,22 @@ const CHARS = {
     height: "162cm", bwh: "88 / 54 / 89", birthday: "11月17日",
     fun: "運動と人混みが苦手。頼まれると、つい「いいよ」。",
     en: "Cool on the outside, gamer on the inside. A natural-born musical genius."
+  },
+  nox: {
+    name: "NOX", jp: "ノクス", color: "#b3c17a", isCat: true,
+    catch: "この家に住む、気まぐれな黒猫。",
+    intro: "SuccuChan House に住む、たった一匹の黒猫。雨の夜、バルコニーに突然あらわれた——どうやって来たのかは、今も誰も知らない。誰のものでもなく、この家を自分の家のように過ごしている。物静かで、いつも誰かをそっと見ている。",
+    quote: "「飼ってない。住んでるだけ。」",
+    quoteBy: "RINA",
+    relations: [
+      { who: "RINA", c: "var(--rina)", text: "いちばん静かに一緒にいられる相手。ピアノの下やゲームの傍らが定位置。RINAが唯一きちんと触れる猫。" },
+      { who: "HIKA", c: "var(--hika)", text: "健康を見守ってくれる係。動物の話をするHIKAの膝に乗ることも。たまにセンサーから姿を消す。" },
+      { who: "KOTO", c: "var(--koto)", text: "首輪を選んでくれた子。もっと着せたいKOTOに、服だけは全力で拒否している。" },
+      { who: "MAYU", c: "var(--mayu)", text: "いちばん追いかけてくる子。抱っこは基本スルー。でも夜こわがるMAYUの前を、なぜか先に歩く。" },
+      { who: "AYA", c: "var(--aya)", text: "ヨガマットの真ん中を占領する常習犯。AYAが落ち込んだ時だけ、ボールを転がして遊んでやる。" },
+      { who: "RAY", c: "var(--ray)", text: "いちばん安心して甘えられる相手。台所やごはんの時間には、自然とそばに現れる。" }
+    ],
+    en: "An ordinary black cat who simply moved in — the household's quiet observer."
   }
 };
 
@@ -74,26 +90,46 @@ function openModal(id) {
   const key = c.name; // 画像ファイル名はキャラ名（大文字）
   panel.style.setProperty("--mc", c.color);
   modalBody.style.setProperty("--mc", c.color);
-  const tags = c.tags.map(t => `<li>${t}</li>`).join("");
+
+  const imgs = `
+    <div class="m-imgs">
+      <img src="assets/webp/${key}_full.webp" alt="${c.name} 全身" loading="lazy" decoding="async">
+      <img src="assets/webp/${key}_close.webp" alt="${c.name} クローズアップ" loading="lazy" decoding="async">
+    </div>`;
+  const quote = `<p class="m-quote">${c.quote}${c.quoteBy ? `<span>— ${c.quoteBy}</span>` : ""}</p>`;
+
+  let detail;
+  if (c.isCat) {
+    const rels = c.relations.map(r =>
+      `<li><b style="color:${r.c}">${r.who}</b><span>${r.text}</span></li>`).join("");
+    detail = `
+      <p class="m-intro">${c.intro}</p>
+      <div class="m-relations">
+        <p class="m-relations-title">6人との、それぞれの距離感</p>
+        <ul>${rels}</ul>
+      </div>`;
+  } else {
+    const tags = c.tags.map(t => `<li>${t}</li>`).join("");
+    detail = `
+      <p class="m-intro">${c.intro}</p>
+      <ul class="m-tags">${tags}</ul>
+      <dl class="m-stats">
+        <dt>身長</dt><dd>${c.height}</dd>
+        <dt>B/W/H</dt><dd>${c.bwh}</dd>
+        <dt>ちょっと意外</dt><dd>${c.fun}</dd>
+      </dl>`;
+  }
+
   modalBody.innerHTML = `
     <div class="m-head">
       <span class="m-name">${c.name}</span>
       <span class="m-jp">${c.jp}</span>
-      <span class="m-bday">🎂 ${c.birthday}</span>
+      ${c.birthday ? `<span class="m-bday">🎂 ${c.birthday}</span>` : ""}
     </div>
     <p class="m-catch">${c.catch}</p>
-    <div class="m-imgs">
-      <img src="assets/webp/${key}_full.webp" alt="${c.name} 全身" loading="lazy" decoding="async">
-      <img src="assets/webp/${key}_close.webp" alt="${c.name} クローズアップ" loading="lazy" decoding="async">
-    </div>
-    <p class="m-quote">${c.quote}</p>
-    <p class="m-intro">${c.intro}</p>
-    <ul class="m-tags">${tags}</ul>
-    <dl class="m-stats">
-      <dt>身長</dt><dd>${c.height}</dd>
-      <dt>B/W/H</dt><dd>${c.bwh}</dd>
-      <dt>ちょっと意外</dt><dd>${c.fun}</dd>
-    </dl>
+    ${imgs}
+    ${quote}
+    ${detail}
     <p class="m-en">${c.en}</p>
   `;
   lastFocus = document.activeElement;
