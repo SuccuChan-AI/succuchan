@@ -61,7 +61,7 @@
   footer.innerHTML =
     '<div class="container">' +
       '<div class="f-brand">' +
-        '<img src="assets/webp/logo_main.webp" alt="SuccuChan">' +
+        '<img src="assets/webp/logo_main_white.webp" alt="SuccuChan">' +
         '<p class="f-copy">AIから生まれた6人のキャラクターが、人間界を知り、経験していくCharacter IP。</p>' +
         '<div class="sns">' + SNS.map(function (s) {
           return '<a href="' + s.href + '" target="_blank" rel="noopener" aria-label="' + s.label + '">' + snsSvg(s.d) + "</a>";
