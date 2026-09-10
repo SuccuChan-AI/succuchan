@@ -1,0 +1,122 @@
+[
+  {
+    "id": "ray",
+    "name": "RAY",
+    "nameJa": "レイ",
+    "color": "#2e9e64",
+    "quote": "「ふふっ、いらっしゃい。ゆっくりしていってね。」",
+    "category": ["COOK", "FLOWER", "CULTURE"],
+    "profile": "家庭的で観察力の高い、この家の“支柱”。料理・お花・文化に通じ、みんなの体調や気分の変化にいちばん先に気づく。支えるのは得意だけど、支えられるのは少し苦手。",
+    "likes": ["家庭料理", "お花", "文化・器", "ワイン", "ヨガ"],
+    "height": "167cm",
+    "birthday": "6/15",
+    "script": "A warm place to come home to.",
+    "tagline": "おかえり、待ってたよ。",
+    "images": { "full": "assets/webp/ray_full.webp", "bust": "assets/webp/ray_bust.webp", "chibi": "assets/webp/ray_chibi.webp", "face": "assets/webp/ray_face.webp" },
+    "explore": [
+      { "label": "GALLERY", "href": "gallery.html?character=ray" },
+      { "label": "COMICS", "href": "succu-world.html?character=ray" },
+      { "label": "MEDIA", "href": "media.html?character=ray" }
+    ]
+  },
+  {
+    "id": "mayu",
+    "name": "MAYU",
+    "nameJa": "マユ",
+    "color": "#c9910a",
+    "quote": "「ねえねえ、なんか食べに行こ！おいしいは正義だよ！」",
+    "category": ["FOOD", "SOCCER", "SMILE"],
+    "profile": "サキュちゃんの太陽。食べ物とイベントが大好きで、何にでも全力。ノリだけに見えて、好きになったものは背景まで調べる努力家。人の長所を素直に「すごい！」と言える子。",
+    "likes": ["食べること", "サッカー", "野球", "お笑い", "イベント"],
+    "height": "156cm",
+    "birthday": "9/9",
+    "script": "Delicious is always right.",
+    "tagline": "おいしいは、正義。",
+    "images": { "full": "assets/webp/mayu_full.webp", "bust": "assets/webp/mayu_bust.webp", "chibi": "assets/webp/mayu_chibi.webp", "face": "assets/webp/mayu_face.webp" },
+    "explore": [
+      { "label": "GALLERY", "href": "gallery.html?character=mayu" },
+      { "label": "COMICS", "href": "succu-world.html?character=mayu" },
+      { "label": "MEDIA", "href": "media.html?character=mayu" }
+    ]
+  },
+  {
+    "id": "aya",
+    "name": "AYA",
+    "nameJa": "アヤ",
+    "color": "#e2661e",
+    "quote": "「よっし、今日も動くよ！一緒に走ろ！」",
+    "category": ["SPORTS", "DANCE", "ENERGY"],
+    "profile": "運動とダンスが大好きなエネルギッシュガール。「できなかったことができる瞬間」がいちばん好き。自分には厳しく、人には優しい。頑張ってる人を見ると、つい応援したくなる。",
+    "likes": ["スポーツ全般", "バスケ", "ダンス", "野球観戦", "ヘアアクセ"],
+    "height": "158cm",
+    "birthday": "5/4",
+    "script": "Today, a little further.",
+    "tagline": "動けば、変わる。",
+    "images": { "full": "assets/webp/aya_full.webp", "bust": "assets/webp/aya_bust.webp", "chibi": "assets/webp/aya_chibi.webp", "face": "assets/webp/aya_face.webp" },
+    "explore": [
+      { "label": "GALLERY", "href": "gallery.html?character=aya" },
+      { "label": "COMICS", "href": "succu-world.html?character=aya" },
+      { "label": "MEDIA", "href": "media.html?character=aya" }
+    ]
+  },
+  {
+    "id": "hika",
+    "name": "HIKA",
+    "nameJa": "ヒカ",
+    "color": "#1ca0c4",
+    "quote": "「これ、いいガジェットなんですよ。…あ、ぬいぐるみも見ます…？」",
+    "category": ["TECH", "ANIMAL", "GAME"],
+    "profile": "ハイテクと動物を、同じ知識欲で愛する知性派。AIやガジェットを使いこなす一方で、珍しい動物を追いかけ、動物園ではカメラとフィールドノートを手放さない。普段は丁寧語。",
+    "likes": ["珍しい動物", "ガジェット", "AI", "ぬいぐるみ", "自然・保全"],
+    "height": "160cm",
+    "birthday": "4/22",
+    "script": "Curious about everything.",
+    "tagline": "知るほど、面白い。",
+    "images": { "full": "assets/webp/hika_full.webp", "bust": "assets/webp/hika_bust.webp", "chibi": "assets/webp/hika_chibi.webp", "face": "assets/webp/hika_face.webp" },
+    "explore": [
+      { "label": "GALLERY", "href": "gallery.html?character=hika" },
+      { "label": "COMICS", "href": "succu-world.html?character=hika" },
+      { "label": "MEDIA", "href": "media.html?character=hika" }
+    ]
+  },
+  {
+    "id": "koto",
+    "name": "KOTO",
+    "nameJa": "コト",
+    "color": "#7a34a6",
+    "quote": "「かわいいだけじゃ、終わらないよ？もっと、知ってほしい…私のこと。」",
+    "category": ["FASHION", "SWEETS", "TREND"],
+    "profile": "トレンド感度の高いガーリー担当スタイリスト。ファッションもスイーツも物語も大好き。プチプラも組み合わせで“高見え”させてしまう。甘いだけじゃない、ちょっと大人な私も。",
+    "likes": ["ファッション", "スイーツ", "カフェ", "写真", "K-POP"],
+    "height": "157cm",
+    "birthday": "10/10",
+    "script": "More of me, just for you.",
+    "tagline": "かわいいの、その先へ。",
+    "images": { "full": "assets/webp/koto_full.webp", "bust": "assets/webp/koto_bust.webp", "chibi": "assets/webp/koto_chibi.webp", "face": "assets/webp/koto_face.webp" },
+    "explore": [
+      { "label": "GALLERY", "href": "gallery.html?character=koto" },
+      { "label": "COMICS", "href": "succu-world.html?character=koto" },
+      { "label": "MEDIA", "href": "media.html?character=koto" }
+    ]
+  },
+  {
+    "id": "rina",
+    "name": "RINA",
+    "nameJa": "リナ",
+    "color": "#c4123e",
+    "quote": "「何でもできる。だからこそ、本気で夢中になれるものを探してる。」",
+    "category": ["MUSIC", "GAME", "NIGHT"],
+    "profile": "何でもできてしまうがゆえに、本気で夢中になれるものを探している。音楽、ゲーム、ブラックコーヒー、そして愛猫のNOX。クールに見えて、気になる人にはまっすぐ。今夜も、少しだけ特別な何かを探して。",
+    "likes": ["音楽・DJ", "ゲーム", "映画", "ブラックコーヒー", "シーシャ"],
+    "height": "165cm",
+    "birthday": "11/17",
+    "script": "Find what sets my heart on fire.",
+    "tagline": "まだ、終わってない。",
+    "images": { "full": "assets/webp/rina_full.webp", "bust": "assets/webp/rina_bust.webp", "chibi": "assets/webp/rina_chibi.webp", "face": "assets/webp/rina_face.webp" },
+    "explore": [
+      { "label": "GALLERY", "href": "gallery.html?character=rina" },
+      { "label": "COMICS", "href": "succu-world.html?character=rina" },
+      { "label": "MEDIA", "href": "media.html?character=rina" }
+    ]
+  }
+]

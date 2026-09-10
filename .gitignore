@@ -1,3 +1,7 @@
-# 元画像（高解像度PNG）と動画はリポジトリに含めない（サイトはWebP版のみ使用）
+# 制作マスター（大容量の元画像・参考画像）は公開リポジトリに含めない。
+# 公開用は assets/webp/*.webp（背景透過カットアウト等）のみをデプロイする。
 assets/*.png
+assets/*.jpg
+assets/*.jpeg
 assets/*.mp4
+# reference01/02（DESIGN REFERENCE ONLY）も上記により除外される。

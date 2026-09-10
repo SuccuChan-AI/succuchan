@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DRESS UP | SuccuChan</title>
+<meta name="description" content="SuccuChan Closet。6人のスタイリング。">
+<link rel="icon" type="image/webp" href="assets/webp/logo_symbol.webp">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,900&family=Archivo:wght@500;600;700;800&family=Zen+Kaku+Gothic+New:wght@500;700;900&family=Noto+Sans+JP:wght@400;500;700&family=Parisienne&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/tokens.css">
+<link rel="stylesheet" href="assets/css/site.css">
+<script defer src="assets/js/site.js"></script>
+<script defer src="assets/js/members.js"></script>
+</head>
+<body>
+<main class="page">
+  <section class="page-intro">
+    <div class="container">
+      <span class="eyebrow">Dress Up</span>
+      <h1 class="big" style="margin-top:14px">SUCCU CLOSET<span class="jp">ドレスアップ</span></h1>
+      <p class="lead">キャラクターとスタイルを選んで、6人を自由に着せ替え。<span class="soon" style="margin-left:6px">Coming Soon</span></p>
+    </div>
+  </section>
+  <section class="sect--tight">
+    <div class="container">
+      <span class="eyebrow">1 &middot; Character</span>
+      <div class="mpv" data-members-preview style="margin-top:16px"></div>
+    </div>
+  </section>
+  <section class="sect--tight">
+    <div class="container">
+      <span class="eyebrow">2 &middot; Style</span>
+      <div class="chip-row" style="margin-top:16px">
+        <span class="chip" data-active>CASUAL</span><span class="chip">GOTHIC</span><span class="chip">STAGE</span>
+        <span class="chip">SEASONAL</span><span class="chip">SCHOOL</span><span class="chip">PARTY</span>
+      </div>
+    </div>
+  </section>
+  <section class="sect--tight">
+    <div class="container">
+      <span class="eyebrow">3 &middot; Outfit</span>
+      <div class="card-grid cols-4" data-skeleton data-count="8" style="margin-top:16px"></div>
+    </div>
+  </section>
+</main>
+<script>
+(function(){
+  var ph='<svg viewBox="0 0 24 24" fill="none"><path d="M8 3l4 3 4-3 4 4-3 3v11H7V10L4 7z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>';
+  document.querySelectorAll('[data-skeleton]').forEach(function(g){
+    var n=+g.dataset.count||8, html='';
+    for(var i=0;i<n;i++){ html+='<div class="gcard"><div class="ph">'+ph+'</div><div class="cap"><div class="t">Outfit '+(i+1)+'</div><div class="m">COMING SOON</div></div></div>'; }
+    g.innerHTML=html;
+  });
+})();
+</script>
+</body>
+</html>
