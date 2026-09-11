@@ -1,0 +1,27 @@
+{
+  "channel": "https://www.youtube.com/channel/UCJ5dIOKp8HSZe8GzTOKxriQ",
+  "works": [
+    {
+      "id": "human-world",
+      "title": "HUMAN WORLD！",
+      "subtitle": "SuccuChan Opening Theme",
+      "category": "MUSIC VIDEO",
+      "orientation": "vertical",
+      "credit": "Music by RINA",
+      "description": "RINAが、6人の人間界での始まりをイメージして作ったオープニング曲。知らない世界に飛び込み、それぞれの“好き”を見つけていく6人の、最初の自己紹介です。",
+      "youtubeIdJa": "8EBKRxKLeQs",
+      "youtubeIdEn": "Lm6CKmEYlYQ",
+      "featured": true
+    },
+    {
+      "id": "quiet-protocol",
+      "title": "Quiet Protocol",
+      "subtitle": "HIKA’s Late Night Focus BGM｜作業・勉強用",
+      "category": "ORIGINAL MUSIC",
+      "orientation": "horizontal",
+      "credit": "Music by RINA",
+      "description": "深夜、静かな部屋で作業するHIKAのために、RINAが作ったBGM。集中したい作業や勉強のお供に。",
+      "youtubeId": "Cmk_Qhpkkw8"
+    }
+  ]
+}

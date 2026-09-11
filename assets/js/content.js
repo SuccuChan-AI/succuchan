@@ -5,7 +5,8 @@
 (function () {
   var comicsRoot = document.querySelector("[data-comics]");
   var galleryRoot = document.querySelector("[data-gallery]");
-  if (!comicsRoot && !galleryRoot) return;
+  var mediaRoot = document.querySelector("[data-media-featured],[data-media-grid]");
+  if (!comicsRoot && !galleryRoot && !mediaRoot) return;
 
   /* ---------- shared lightbox ---------- */
   var lb = document.createElement("div");
@@ -102,5 +103,78 @@
       }
       render();
     }).catch(function(e){ console.error("gallery load failed", e); });
+  }
+
+  /* ---------- MEDIA (YouTube lite-embed) ---------- */
+  function ytEmbedHtml(id, orient){
+    // hqdefault は全動画で確実に存在。maxresが在れば読み込み後に高画質へ差し替え。
+    var hq = "https://i.ytimg.com/vi/"+id+"/hqdefault.jpg";
+    var hi = "https://i.ytimg.com/vi/"+id+"/maxresdefault.jpg";
+    return '<div class="yt-embed" data-orient="'+(orient||"horizontal")+'">' +
+      '<button class="yt-facade" data-id="'+id+'" aria-label="動画を再生">' +
+        '<img class="yt-thumb" src="'+hq+'" data-hi="'+hi+'" alt="" loading="lazy">' +
+        '<span class="yt-play" aria-hidden="true"></span>' +
+      "</button></div>";
+  }
+  function upgradeThumbs(root){
+    root.querySelectorAll(".yt-thumb[data-hi]").forEach(function(img){
+      var hi = img.getAttribute("data-hi"); if(!hi) return;
+      var probe = new Image();
+      probe.onload = function(){ if(probe.naturalWidth > 320) img.src = hi; };
+      probe.src = hi;
+    });
+  }
+  function playFacade(btn){
+    var id = btn.dataset.id, wrap = btn.parentNode;
+    var ifr = document.createElement("iframe");
+    ifr.className = "yt-iframe";
+    ifr.src = "https://www.youtube.com/embed/"+id+"?autoplay=1&rel=0&playsinline=1";
+    ifr.title = "YouTube video player";
+    ifr.setAttribute("frameborder","0");
+    ifr.setAttribute("allow","accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share");
+    ifr.setAttribute("allowfullscreen","");
+    wrap.replaceChild(ifr, btn);
+  }
+  function wireFacades(root){ root.querySelectorAll(".yt-facade").forEach(function(b){ b.addEventListener("click", function(){ playFacade(b); }); }); upgradeThumbs(root); }
+
+  if (mediaRoot){
+    fetch("assets/data/media.json").then(function(r){return r.json();}).then(function(m){
+      var works = m.works || [];
+      document.querySelectorAll("[data-channel]").forEach(function(a){ a.href = m.channel; });
+
+      var fRoot = document.querySelector("[data-media-featured]");
+      var featured = works.filter(function(w){return w.featured;})[0] || works[0];
+      if (fRoot && featured){
+        var lang = "ja";
+        var fid = function(){ return (lang==="en" && featured.youtubeIdEn) ? featured.youtubeIdEn : (featured.youtubeIdJa || featured.youtubeId); };
+        var renderF = function(){
+          var hasLang = featured.youtubeIdJa && featured.youtubeIdEn;
+          fRoot.innerHTML =
+            '<div class="mf-player">' + ytEmbedHtml(fid(), featured.orientation) + "</div>" +
+            '<div class="mf-info">' +
+              '<span class="eyebrow">' + featured.category + "</span>" +
+              '<h2 class="mf-title">' + featured.title + "</h2>" +
+              '<p class="mf-sub">' + featured.subtitle + "</p>" +
+              (hasLang ? '<div class="mf-lang"><button data-l="ja"' + (lang==="ja"?" data-active":"") + ">日本語</button><button data-l=\"en\"" + (lang==="en"?" data-active":"") + ">English</button></div>" : "") +
+              '<p class="mf-desc">' + featured.description + "</p>" +
+              '<p class="mf-credit">' + featured.credit + "</p>" +
+            "</div>";
+          wireFacades(fRoot);
+          fRoot.querySelectorAll(".mf-lang button").forEach(function(b){ b.addEventListener("click", function(){ lang=b.dataset.l; renderF(); }); });
+        };
+        renderF();
+      }
+
+      var gRoot = document.querySelector("[data-media-grid]");
+      if (gRoot){
+        var list = works.filter(function(w){ return !w.featured; });
+        gRoot.innerHTML = list.map(function(w){
+          var id = w.youtubeIdJa || w.youtubeId;
+          return '<div class="mwork">' + ytEmbedHtml(id, w.orientation) +
+            '<div class="mwork-cap"><span class="cat">' + w.category + '</span><h3>' + w.title + '</h3><p>' + w.subtitle + "</p></div></div>";
+        }).join("");
+        wireFacades(gRoot);
+      }
+    }).catch(function(e){ console.error("media load failed", e); });
   }
 })();

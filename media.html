@@ -4,14 +4,16 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>MEDIA | SuccuChan</title>
-<meta name="description" content="SuccuChanの映像作品。Music Video / PV / Short Film。">
+<meta name="description" content="SuccuChanの映像作品。Music Video / Original Music。">
 <link rel="icon" type="image/webp" href="assets/webp/logo_symbol.webp">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://i.ytimg.com">
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,900&family=Archivo:wght@500;600;700;800&family=Zen+Kaku+Gothic+New:wght@500;700;900&family=Noto+Sans+JP:wght@400;500;700&family=Parisienne&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/css/tokens.css">
 <link rel="stylesheet" href="assets/css/site.css">
 <script defer src="assets/js/site.js"></script>
+<script defer src="assets/js/content.js"></script>
 </head>
 <body>
 <main class="page">
@@ -19,39 +21,31 @@
     <div class="container">
       <span class="eyebrow">Media</span>
       <h1 class="big" style="margin-top:14px">MEDIA<span class="jp">映像作品</span></h1>
-      <p class="lead">Music Video、Character PV、Short Film、Original Music。SuccuChanの公式映像作品をここで。</p>
+      <p class="lead">SuccuChanの公式映像作品。Music Video や Original Music をお届けします。</p>
     </div>
   </section>
+
   <section class="sect--tight">
     <div class="container">
-      <a class="tease tease--wide tease--media" href="#" aria-disabled="true">
-        <span class="soon" style="color:var(--magenta);border-color:rgba(232,74,155,.5);background:rgba(232,74,155,.12)">Coming Soon</span>
-        <span class="t-en" style="margin-top:14px;display:block">1st MUSIC VIDEO</span>
-        <span class="t-ja">Original Music Video</span>
-        <span class="t-desc">記念すべき最初のMVを準備中。公開をお楽しみに。</span>
-        <span class="media-play" aria-hidden="true"></span>
+      <div class="media-featured" data-media-featured></div>
+    </div>
+  </section>
+
+  <section class="sect--tight">
+    <div class="container">
+      <div class="sect-head"><div><span class="eyebrow">Works</span><h2 class="sect-title" style="margin-top:14px">ALL WORKS<span class="jp">作品一覧</span></h2></div></div>
+      <div class="media-grid" data-media-grid></div>
+    </div>
+  </section>
+
+  <section class="sect--tight">
+    <div class="container" style="text-align:center">
+      <a class="btn btn--solid" data-channel href="https://www.youtube.com/channel/UCJ5dIOKp8HSZe8GzTOKxriQ" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path fill="currentColor" d="M23.5 6.2a3.02 3.02 0 0 0-2.12-2.14C19.5 3.55 12 3.55 12 3.55s-7.5 0-9.38.51A3.02 3.02 0 0 0 .5 6.2 31.5 31.5 0 0 0 0 12a31.5 31.5 0 0 0 .5 5.8 3.02 3.02 0 0 0 2.12 2.14c1.88.51 9.38.51 9.38.51s7.5 0 9.38-.51a3.02 3.02 0 0 0 2.12-2.14A31.5 31.5 0 0 0 24 12a31.5 31.5 0 0 0-.5-5.8zM9.6 15.6V8.4l6.2 3.6z"/></svg>
+        YouTubeチャンネル登録
       </a>
     </div>
   </section>
-  <section class="sect--tight">
-    <div class="container">
-      <div class="sect-head"><div><span class="eyebrow">Works</span><h2 class="sect-title" style="margin-top:14px">ALL WORKS<span class="jp">映像作品一覧</span></h2></div></div>
-      <div class="card-grid cols-3" data-skeleton data-count="6"></div>
-    </div>
-  </section>
 </main>
-<script>
-(function(){
-  var play='<svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1.4"/><path d="M10 8.5l5 3.5-5 3.5z" fill="currentColor"/></svg>';
-  var kinds=['Music Video','Character PV','Short Film','Original Music','Character PV','Short Film'];
-  document.querySelectorAll('[data-skeleton]').forEach(function(g){
-    var n=+g.dataset.count||6, html='';
-    for(var i=0;i<n;i++){
-      html+='<div class="gcard wide"><div class="ph">'+play+'</div><div class="cap"><div class="t">Coming Soon</div><div class="m">'+kinds[i%kinds.length].toUpperCase()+'</div></div></div>';
-    }
-    g.innerHTML=html;
-  });
-})();
-</script>
 </body>
 </html>
