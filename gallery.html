@@ -12,6 +12,7 @@
 <link rel="stylesheet" href="assets/css/tokens.css">
 <link rel="stylesheet" href="assets/css/site.css">
 <script defer src="assets/js/site.js"></script>
+<script defer src="assets/js/content.js"></script>
 </head>
 <body>
 <main class="page">
@@ -19,30 +20,17 @@
     <div class="container">
       <span class="eyebrow">Gallery</span>
       <h1 class="big" style="margin-top:14px">GALLERY<span class="jp">キャラクターアート</span></h1>
-      <p class="lead">キービジュアルから日常のひとコマまで。SuccuChanのアートコレクション。</p>
+      <p class="lead">6人のアートコレクション。キャラクターで絞り込み、タップで拡大できます。</p>
     </div>
   </section>
   <section class="sect--tight">
     <div class="container">
-      <div class="chip-row">
-        <span class="chip" data-active>KEY VISUAL</span>
-        <span class="chip">GRAVURE</span>
-        <span class="chip">SEASONAL</span>
-        <span class="chip">DAILY LIFE</span>
+      <div class="content-controls">
+        <div class="chip-row" data-gallery-filter></div>
       </div>
-      <div class="card-grid cols-4" data-skeleton data-count="12" data-ratio="portrait"></div>
+      <div class="gallery-masonry" data-gallery></div>
     </div>
   </section>
 </main>
-<script>
-(function(){
-  var ph='<svg viewBox="0 0 24 24" fill="none"><rect x="3" y="4" width="18" height="16" rx="2" stroke="currentColor" stroke-width="1.6"/><circle cx="8.5" cy="9.5" r="1.6" stroke="currentColor" stroke-width="1.6"/><path d="M4 17l5-5 4 4 3-3 4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>';
-  document.querySelectorAll('[data-skeleton]').forEach(function(g){
-    var n=+g.dataset.count||8, html='';
-    for(var i=0;i<n;i++){ html+='<div class="gcard"><div class="ph">'+ph+'</div></div>'; }
-    g.innerHTML=html;
-  });
-})();
-</script>
 </body>
 </html>

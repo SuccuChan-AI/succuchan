@@ -11,8 +11,10 @@ assets/*.mp4
 assets/comics/**/*.png
 assets/comics/**/*.jpg
 assets/comics/**/*.jpeg
+assets/comics/**/*.webp
 assets/gallery/**/*.png
 assets/gallery/**/*.jpg
 assets/gallery/**/*.jpeg
+assets/gallery/**/*.webp
 assets/media/**
 !assets/media/.gitkeep
