@@ -5,3 +5,14 @@ assets/*.jpg
 assets/*.jpeg
 assets/*.mp4
 # reference01/02（DESIGN REFERENCE ONLY）も上記により除外される。
+
+# 入稿マスター（comics/gallery の元画像・media の動画）は非公開。
+# 公開用の軽量WebPは assets/webp/ 配下に生成してデプロイする（READMEと構造は追跡する）。
+assets/comics/**/*.png
+assets/comics/**/*.jpg
+assets/comics/**/*.jpeg
+assets/gallery/**/*.png
+assets/gallery/**/*.jpg
+assets/gallery/**/*.jpeg
+assets/media/**
+!assets/media/.gitkeep
