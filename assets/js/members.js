@@ -60,11 +60,24 @@
 
     document.title = m.name + " " + m.nameJa + " | SuccuChan";
 
-    var roster = members.map(function (x, i) {
+    var faceSwitch = members.map(function (x) {
       var cur = x.id === m.id ? ' aria-current="true"' : "";
-      return (i ? '<span class="sep">|</span>' : "") +
-        '<a href="member.html?id=' + x.id + '"' + cur + '>' + x.name + "</a>";
+      return '<a href="member.html?id=' + x.id + '"' + cur + ' style="--mc:' + x.color + '" title="' + x.name + '">' +
+        '<span class="fs-face"><img src="' + x.images.face + '" alt="' + x.name + '" loading="lazy"></span>' +
+        '<span class="fs-name">' + x.name + '</span></a>';
     }).join("");
+
+    var geo = '<svg class="geo" viewBox="0 0 400 400" fill="none" aria-hidden="true" preserveAspectRatio="xMidYMid meet">' +
+      '<circle cx="200" cy="200" r="188" stroke="currentColor" stroke-width="0.7"/>' +
+      '<circle cx="200" cy="200" r="150" stroke="currentColor" stroke-width="1"/>' +
+      '<circle cx="200" cy="200" r="150" stroke="currentColor" stroke-width="6" stroke-dasharray="1 44" stroke-linecap="round"/>' +
+      '<circle cx="200" cy="200" r="112" stroke="currentColor" stroke-width="0.7" stroke-dasharray="2 7"/>' +
+      '<circle cx="200" cy="200" r="70" stroke="currentColor" stroke-width="0.7"/>' +
+      '<path d="M200 12v376M12 200h376" stroke="currentColor" stroke-width="0.5"/>' +
+      '<path d="M64 64l272 272M336 64L64 336" stroke="currentColor" stroke-width="0.4"/>' +
+      '<circle cx="200" cy="50" r="3.4" fill="currentColor"/><circle cx="200" cy="350" r="3.4" fill="currentColor"/>' +
+      '<circle cx="50" cy="200" r="3.4" fill="currentColor"/><circle cx="350" cy="200" r="3.4" fill="currentColor"/>' +
+      '</svg>';
 
     var likes = m.likes.map(function (l) { return "<li>" + esc(l) + "</li>"; }).join("");
     var cat = m.category.map(function (c, i) { return (i ? ' <span class="d-cat-sep">/</span> ' : "") + (i === 0 ? "<b>" + c + "</b>" : c); }).join("");
@@ -93,9 +106,10 @@
             "</div>" +
             '<ul class="d-likes">' + likes + "</ul>" +
             '<div class="d-explore"><div class="lbl">Explore ' + m.name + '</div><ul>' + explore + "</ul></div>" +
-            '<div class="d-switch"><nav class="roster" aria-label="メンバー切替">' + roster + "</nav></div>" +
+            '<div class="d-switch"><nav class="face-switch" aria-label="メンバー切替">' + faceSwitch + "</nav></div>" +
           "</div>" +
           '<div class="d-visual">' +
+            geo +
             '<span class="d-watermark" aria-hidden="true">' + m.name + '</span>' +
             '<img class="d-bust" src="' + m.images.bust + '" alt="" aria-hidden="true" loading="lazy">' +
             '<span class="d-full"><img src="' + m.images.full + '" alt="' + m.name + ' ' + m.nameJa + '"></span>' +

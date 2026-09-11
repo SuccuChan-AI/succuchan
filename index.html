@@ -31,11 +31,17 @@
         <h1 class="hero-h1"><span style="white-space:nowrap">人間界って、</span><br><span style="white-space:nowrap">こんなに<em>面白い。</em></span></h1>
         <p class="hero-en">Six girls &middot; One house &middot; A more colorful tomorrow</p>
       </div>
-      <div class="hero-kv" role="img" aria-label="集合キービジュアル（準備中）">
+      <div class="hero-kv" id="heroKv" role="img" aria-label="SuccuChan メンバー集合キービジュアル（準備中）">
+        <!-- 差し替え用: assets/webp/hero-keyvisual.webp (2560x1440 / 16:9) と
+             任意の hero-keyvisual-mobile.webp を置くだけで自動表示されます -->
+        <picture class="hero-kv-img" hidden>
+          <source media="(max-width:680px)" srcset="assets/webp/hero-keyvisual-mobile.webp">
+          <img src="assets/webp/hero-keyvisual.webp" alt="SuccuChan メンバー集合キービジュアル" decoding="async">
+        </picture>
         <div class="kv-ph">
           <svg viewBox="0 0 64 40" fill="none" aria-hidden="true"><path d="M14 22C8 16 6 8 8 3c6 2 11 8 12 14" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><path d="M50 22c6-6 8-14 6-19-6 2-11 8-12 14" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><path d="M20 30c0-7 5-11 12-11s12 4 12 11" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg>
           <div class="kv-mark">Key Visual Coming Soon</div>
-          <div class="kv-sub">集合キービジュアル 準備中</div>
+          <div class="kv-sub">集合キービジュアル 準備中 &middot; 2560&times;1440</div>
         </div>
       </div>
     </div>
@@ -139,6 +145,15 @@ window.addEventListener("load", function () {
   var dst = document.querySelector("[data-sns]");
   if (src && dst) dst.innerHTML = src.innerHTML;
 });
+/* reveal the hero key visual only when the (future) image actually loads */
+(function () {
+  var kv = document.getElementById("heroKv"); if (!kv) return;
+  var pic = kv.querySelector(".hero-kv-img"), img = pic && pic.querySelector("img");
+  if (!img) return;
+  function show(){ kv.setAttribute("data-has-image",""); pic.hidden=false; var ph=kv.querySelector(".kv-ph"); if(ph) ph.hidden=true; }
+  if (img.complete && img.naturalWidth>0) show();
+  else img.addEventListener("load", function(){ if(img.naturalWidth>0) show(); });
+})();
 </script>
 </body>
 </html>
