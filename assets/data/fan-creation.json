@@ -1,0 +1,107 @@
+{
+  "hashtag": "#SuccuChanFA",
+  "characters": [
+    {
+      "id": "rina", "name": "RINA", "nameJa": "リナ", "color": "#c4123e",
+      "themes": ["MUSIC", "GAME", "FILM", "DIGITAL"],
+      "creatorCopy": "クールだけど、刺さったものには一気に夢中。音楽、ゲーム、映画、デジタルカルチャーなどを一緒に楽しみたい人へ。",
+      "profileHref": "member.html?id=rina",
+      "face": "assets/webp/rina_face.webp",
+      "referenceImage": "assets/fan-creation/rina-reference.webp",
+      "ref": {
+        "hair": "ダークレッド〜ワインレッドのロングストレート（毛先は明るい赤）",
+        "eyes": "グレー〜シルバー",
+        "horns": "黒のカーブした角",
+        "tail": "赤いデビルテール（先が矢じり型）",
+        "features": "チョーカー、肩の星＆ゲームパッドのタトゥー、黒基調の衣装",
+        "personality": ["クール", "実は情熱的", "聞き上手", "夢中になると一直線"],
+        "interests": ["音楽・作曲・DJ", "ゲーム(FPS)", "映画・SF", "ブラックコーヒー", "シーシャ"]
+      }
+    },
+    {
+      "id": "ray", "name": "RAY", "nameJa": "レイ", "color": "#2e9e64",
+      "themes": ["COOKING", "LIFE", "FLOWERS", "CULTURE"],
+      "creatorCopy": "暮らしを整え、誰かをそっと気遣えるお姉さん。料理、街、文化、日常の小さな幸せと相性◎。",
+      "profileHref": "member.html?id=ray",
+      "face": "assets/webp/ray_face.webp",
+      "referenceImage": "assets/fan-creation/ray-reference.webp",
+      "ref": {
+        "hair": "ブラウンのロングヘア（落ち着いた大人系）",
+        "eyes": "ブラウン",
+        "horns": "黒の角",
+        "tail": "黒のデビルテール",
+        "features": "上品な装い・エプロン、緑の宝石イヤリング、穏やかな雰囲気",
+        "personality": ["家庭的", "面倒見が良い", "観察力がある", "最年長のお姉さん"],
+        "interests": ["家庭料理", "お花(白い薔薇)", "文化・器", "ワイン", "ヨガ"]
+      }
+    },
+    {
+      "id": "mayu", "name": "MAYU", "nameJa": "マユ", "color": "#c9910a",
+      "themes": ["FOOD", "FOOTBALL", "TRAVEL", "LOCAL"],
+      "creatorCopy": "「おいしいは正義！」食べ物、サッカー、旅行、地域やご当地文化を一緒に楽しみたい人へ。",
+      "profileHref": "member.html?id=mayu",
+      "face": "assets/webp/mayu_face.webp",
+      "referenceImage": "assets/fan-creation/mayu-reference.webp",
+      "ref": {
+        "hair": "金髪ボブ（毛先はピンクのグラデーション）",
+        "eyes": "アンバー〜ブラウン",
+        "horns": "黒の角",
+        "tail": "黒のデビルテール",
+        "features": "明るい笑顔、チョーカー、オフショルダー",
+        "personality": ["明るい", "食いしん坊", "ムードメーカー", "実は努力家"],
+        "interests": ["食べること(チョコミント)", "サッカー(FC東京)", "野球(ヤクルト)", "お笑い"]
+      }
+    },
+    {
+      "id": "koto", "name": "KOTO", "nameJa": "コト", "color": "#7a34a6",
+      "themes": ["FASHION", "SWEETS", "TREND", "DESIGN"],
+      "creatorCopy": "かわいいものと、新しいものが大好き。ファッション、スイーツ、トレンド、デザイン系に。",
+      "profileHref": "member.html?id=koto",
+      "face": "assets/webp/koto_face.webp",
+      "referenceImage": "assets/fan-creation/koto-reference.webp",
+      "ref": {
+        "hair": "黒髪のツインテール（ウェーブ）",
+        "eyes": "ブラウン（大きめ）",
+        "horns": "黒の角",
+        "tail": "黒のデビルテール",
+        "features": "黒リボン、ゴシック/レースのガーリー衣装、紫の宝石チョーカー",
+        "personality": ["ガーリー", "トレンド好き", "好奇心旺盛", "スタイリスト気質"],
+        "interests": ["ファッション", "スイーツ", "カフェ", "スマホ写真", "K-POP"]
+      }
+    },
+    {
+      "id": "hika", "name": "HIKA", "nameJa": "ヒカ", "color": "#1ca0c4",
+      "themes": ["ANIMALS", "SCIENCE", "TECH", "DISCOVERY"],
+      "creatorCopy": "気になったら、調べずにはいられない。動物、科学、技術、自然、観察や発見系のテーマに。",
+      "profileHref": "member.html?id=hika",
+      "face": "assets/webp/hika_face.webp",
+      "referenceImage": "assets/fan-creation/hika-reference.webp",
+      "ref": {
+        "hair": "黒のショート/ボブ",
+        "eyes": "ブルー",
+        "horns": "黒の角",
+        "tail": "黒のデビルテール",
+        "features": "丸メガネ、青く光るLED首輪、シンプルで機能的な服",
+        "personality": ["知性派", "普段は丁寧語", "動物の話は早口", "観察好き"],
+        "interests": ["珍しい動物", "ガジェット・AI", "ゲーム", "ぬいぐるみ収集", "自然・保全"]
+      }
+    },
+    {
+      "id": "aya", "name": "AYA", "nameJa": "アヤ", "color": "#e2661e",
+      "themes": ["SPORTS", "TRAINING", "CHEER", "CHALLENGE"],
+      "creatorCopy": "思ったらまず動く。やるなら全力。スポーツ、運動、挑戦、応援系ならAYAと。",
+      "profileHref": "member.html?id=aya",
+      "face": "assets/webp/aya_face.webp",
+      "referenceImage": "assets/fan-creation/aya-reference.webp",
+      "ref": {
+        "hair": "ブラウンのロング（編み込み・毛先は明るめ）",
+        "eyes": "ブラウン",
+        "horns": "ダークブラウンの角",
+        "tail": "ダークブラウンのデビルテール",
+        "features": "日焼けした小麦肌、腕のトライバル風タトゥー、スポーティな装い、シルバーのバングル",
+        "personality": ["エネルギッシュ", "直球", "自分に厳しく人に優しい", "全力"],
+        "interests": ["スポーツ全般", "バスケ", "ダンス", "野球観戦", "ヘアアクセ"]
+      }
+    }
+  ]
+}
