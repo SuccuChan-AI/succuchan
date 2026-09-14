@@ -22,6 +22,30 @@
       "credit": "Music by RINA",
       "description": "深夜、静かな部屋で作業するHIKAのために、RINAが作ったBGM。集中したい作業や勉強のお供に。",
       "youtubeId": "Cmk_Qhpkkw8"
+    },
+    {
+      "id": "nox-morning-patrol",
+      "title": "NOX Morning Patrol",
+      "subtitle": "SuccuChan Episode",
+      "category": "EPISODE",
+      "orientation": "horizontal",
+      "description": "みんなが起きる少し前。NOXは静かなSuccuChan Houseを、いつものようにパトロールします。部屋をのぞいたり、朝の光を眺めたり。特別なことは起きないけれど、SuccuChanの一日はこんな静かな時間から始まります。NOXとSuccuChan Houseの日常を切り取った、約2分間のショートエピソード。",
+      "shortDescription": "みんなが起きる少し前、NOXが静かなSuccuChan Houseを巡回する約2分間の朝の物語。",
+      "cta": "WATCH",
+      "youtubeId": "4zqkDEjoobo"
+    },
+    {
+      "id": "six-girls-chill",
+      "title": "6人で過ごすチルタイム",
+      "subtitle": "6 Girls, 6 Moments｜Music by RINA",
+      "category": "AMBIENT",
+      "orientation": "horizontal",
+      "credit": "Music by RINA",
+      "secondary": "SuccuChan Ambient / Music by RINA",
+      "description": "6人それぞれの、人間界で過ごす時間。動いたり、読んだり、休んだり、ゲームをしたり、何かに集中したり。朝から夜まで、それぞれ違う時間を過ごすSuccuChanの6人を、RINAが作った音楽とともにつないだ約16分間のAmbient Videoです。作業、読書、勉強、休憩。何かをしながらでも、何もしない時間にも。SuccuChanの6人と一緒に、少しだけゆっくり過ごすための映像作品。",
+      "shortDescription": "6人それぞれの日常を、RINAの音楽とともにつないだ約16分間のSuccuChan Ambient Video。",
+      "cta": "LISTEN / WATCH",
+      "youtubeId": "XkYNPhDMrU8"
     }
   ]
 }
