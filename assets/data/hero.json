@@ -1,0 +1,50 @@
+{
+  "autoplayMs": 7000,
+  "slides": [
+    {
+      "id": "about",
+      "kind": "image",
+      "label": "About / Brand",
+      "sub": "人間界を知り、少しずつ「好き」を増やしていく6人。",
+      "image": "assets/webp/hero-keyvisual.webp",
+      "objectPosition": "center 30%",
+      "objectPositionMobile": "center 32%",
+      "cta": "ABOUT US",
+      "href": "about.html"
+    },
+    {
+      "id": "nox-morning-patrol",
+      "kind": "image",
+      "label": "Now on YouTube",
+      "sub": "NOXと歩く、SuccuChan Houseの静かな朝。",
+      "image": "assets/webp/media/nox-morning-patrol.webp",
+      "objectPosition": "center center",
+      "objectPositionMobile": "62% center",
+      "cta": "WATCH",
+      "href": "https://youtu.be/4zqkDEjoobo",
+      "external": true
+    },
+    {
+      "id": "six-girls-chill",
+      "kind": "image",
+      "label": "SuccuChan Ambient",
+      "sub": "6人それぞれの日常を、RINAの音楽と一緒に。",
+      "image": "assets/webp/media/six-girls-chill.webp",
+      "objectPosition": "center center",
+      "objectPositionMobile": "center center",
+      "cta": "LISTEN / WATCH",
+      "href": "https://youtu.be/XkYNPhDMrU8",
+      "external": true
+    },
+    {
+      "id": "fan-creation",
+      "kind": "brand",
+      "label": "Fan Creation",
+      "title": "あなたの好きな人間界へ。",
+      "sub": "描く。着せる。教える。連れていく。",
+      "faces": ["rina", "hika", "koto", "mayu", "aya", "ray"],
+      "cta": "FAN CREATION",
+      "href": "fan-creation.html"
+    }
+  ]
+}

@@ -535,3 +535,109 @@ main{display:block}
   .fc-ref-card{grid-template-columns:1fr}
   .fc-ref-card .ref-img{aspect-ratio:16/10;min-height:0}
 }
+
+/* ============================================================
+   HOME HERO SLIDER  (replaces the fixed key-visual hero)
+   ============================================================ */
+.sr-only{position:absolute!important;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
+
+.hero{padding-top:clamp(16px,3vw,32px);padding-bottom:clamp(22px,4vw,44px)}
+.hero-slider{position:relative;width:100%;aspect-ratio:16/9;border-radius:var(--r-lg);overflow:hidden;background:var(--mist);box-shadow:var(--shadow-md);isolation:isolate}
+.hs-fallback,.hs-fallback img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 30%}
+
+.hs-track{position:absolute;inset:0}
+.hs-slide{position:absolute;inset:0;display:block;color:#fff;text-decoration:none;opacity:0;visibility:hidden;transition:opacity .55s var(--ease),visibility .55s var(--ease);z-index:1}
+.hs-slide.is-active{opacity:1;visibility:visible;z-index:2}
+@media (prefers-reduced-motion:reduce){.hs-slide{transition:opacity .01s linear,visibility .01s linear}}
+.hs-slide:not(.is-active){pointer-events:none}
+.hs-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:var(--op,center center)}
+
+/* legibility scrim — image slides carry content bottom-right */
+.hs--image::after{content:"";position:absolute;inset:0;z-index:1;background:
+  linear-gradient(300deg,rgba(18,14,26,.62),rgba(18,14,26,.14) 34%,transparent 58%),
+  linear-gradient(to top,rgba(18,14,26,.34),transparent 34%)}
+
+.hs-body{position:absolute;z-index:2;left:0;right:0;bottom:0;display:flex;flex-direction:column;gap:11px;
+  padding:clamp(20px,3.2vw,44px) clamp(20px,3.4vw,50px) clamp(46px,4.4vw,60px)}
+.hs--image .hs-body{align-items:flex-end;text-align:right}
+.hs--brand .hs-body{align-items:flex-start;text-align:left}
+
+.hs-label{font-family:var(--font-en);font-weight:800;letter-spacing:.2em;text-transform:uppercase;font-size:clamp(10px,1.25vw,12.5px);display:inline-flex;align-items:center;gap:9px;line-height:1}
+.hs-label::before{content:"";width:22px;height:2px;background:currentColor;opacity:.85}
+.hs--image .hs-label{color:#fff;text-shadow:0 1px 14px rgba(0,0,0,.55);flex-direction:row-reverse}
+.hs--brand .hs-label{color:var(--violet)}
+
+.hs-title{font-family:var(--font-jp-head);font-weight:900;font-size:clamp(22px,3.3vw,40px);line-height:1.22;letter-spacing:.01em}
+.hs--brand .hs-title{color:var(--ink)}
+
+.hs-sub{font-size:clamp(12px,1.5vw,15px);line-height:1.7;max-width:44ch}
+.hs--image .hs-sub{color:rgba(255,255,255,.94);font-weight:500;text-shadow:0 1px 12px rgba(0,0,0,.55)}
+.hs--brand .hs-sub{color:var(--ink-55)}
+
+.hs-cta{margin-top:5px;display:inline-flex;align-items:center;gap:9px;font-family:var(--font-en);font-weight:700;font-size:var(--fs-sm);letter-spacing:.06em;
+  padding:12px 24px;border-radius:var(--r-pill);background:#fff;color:var(--ink);box-shadow:var(--shadow-sm);
+  transition:transform var(--dur) var(--ease),background var(--dur),color var(--dur)}
+.hs--brand .hs-cta{background:var(--violet);color:#fff}
+.hs-slide:hover .hs-cta{transform:translateY(-2px);background:var(--accent);color:#fff}
+.hs--brand.hs-slide:hover .hs-cta{background:var(--ink)}
+.hs-cta .arw{font-size:1.05em;line-height:1}
+
+/* brand (FAN CREATION) slide — composed from the 6 faces */
+.hs--brand{background:radial-gradient(130% 150% at 12% 0,var(--mist-2),#fff 62%)}
+.hs--brand::after{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(to top,rgba(255,255,255,.94),rgba(255,255,255,.35) 34%,transparent 60%)}
+.hs-faces{position:absolute;inset:0;z-index:0;display:flex;align-items:flex-start;justify-content:center;gap:clamp(6px,1.7vw,22px);padding:clamp(26px,5vw,62px) clamp(18px,4vw,60px) 0}
+.hs-faces span{width:clamp(58px,11vw,130px);height:clamp(58px,11vw,130px);border-radius:50%;overflow:hidden;border:3px solid #fff;box-shadow:var(--shadow-md);background:var(--mist);flex:0 0 auto}
+.hs-faces img{width:100%;height:100%;object-fit:cover;object-position:center 30%}
+
+/* controls */
+.hs-arrow{position:absolute;top:50%;transform:translateY(-50%);z-index:5;width:clamp(38px,3.6vw,50px);height:clamp(38px,3.6vw,50px);border-radius:50%;border:0;
+  background:rgba(255,255,255,.85);color:var(--ink);display:grid;place-items:center;cursor:pointer;box-shadow:var(--shadow-sm);
+  transition:background var(--dur),transform var(--dur)}
+.hs-arrow:hover{background:#fff;transform:translateY(-50%) scale(1.07)}
+.hs-arrow:focus-visible{outline:2px solid var(--violet);outline-offset:2px}
+.hs-prev{left:clamp(10px,1.4vw,18px)}
+.hs-next{right:clamp(10px,1.4vw,18px)}
+.hs-arrow svg{width:44%;height:44%}
+
+.hs-dots{position:absolute;z-index:5;left:0;right:0;bottom:clamp(12px,1.5vw,18px);display:flex;justify-content:center;gap:9px}
+.hs-dot{width:9px;height:9px;border-radius:var(--r-pill);border:0;padding:0;cursor:pointer;background:rgba(255,255,255,.6);box-shadow:0 0 0 1px rgba(0,0,0,.14);transition:width var(--dur) var(--ease),background var(--dur)}
+.hs-dot:hover{background:rgba(255,255,255,.9)}
+.hs-dot[aria-current="true"]{width:26px;background:#fff}
+.hs-dot:focus-visible{outline:2px solid var(--violet);outline-offset:2px}
+/* brand slide is light — keep dots readable there too via their 1px ring */
+
+@media (max-width:680px){
+  .hero-slider{aspect-ratio:4/5}
+  .hs-fallback img{object-position:center 28%}
+  .hs-img{object-position:var(--op-m,var(--op,center center))}
+  .hs--image .hs-body{align-items:flex-start;text-align:left}
+  .hs--image .hs-label{flex-direction:row}
+  .hs-title{font-size:clamp(21px,6.4vw,30px)}
+  .hs-sub{max-width:32ch}
+  .hs-arrow{display:none}
+  .hs-faces{align-items:center;flex-wrap:wrap;gap:10px;padding-top:0;padding-bottom:34%}
+}
+
+/* ============================================================
+   HOME · SUCCU WORLD preview — make "4-panel comics" obvious
+   ============================================================ */
+.tease--comic{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(20px,3vw,44px);align-items:center}
+.tease--comic .tc-text{display:flex;flex-direction:column;align-items:flex-start}
+.t-badge{display:inline-flex;align-items:center;gap:8px;margin-top:13px;font-family:var(--font-en);font-weight:800;letter-spacing:.13em;text-transform:uppercase;font-size:var(--fs-xs);
+  color:var(--violet);background:var(--accent-soft);border:1px solid var(--accent-line);border-radius:var(--r-pill);padding:6px 14px}
+.tease--comic .t-desc{margin-top:14px}
+.tease--comic .t-go{position:static;margin-top:20px;align-self:flex-start}
+.tc-strip{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(8px,1.2vw,14px)}
+.tc-strip img{width:100%;height:clamp(158px,19vw,230px);object-fit:cover;object-position:top center;border-radius:var(--r-md);border:1px solid var(--hairline);box-shadow:var(--shadow-md);background:#fff;
+  transition:transform var(--dur) var(--ease)}
+.tease--comic:hover .tc-strip img{transform:translateY(-4px)}
+.tc-strip img:nth-child(3){display:block}
+
+@media (max-width:760px){
+  .tease--comic{grid-template-columns:1fr;gap:22px}
+  .tc-strip img{height:clamp(150px,42vw,220px)}
+}
+@media (max-width:460px){
+  .tc-strip{grid-template-columns:repeat(3,1fr)}
+  .tc-strip img{height:34vw}
+}

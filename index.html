@@ -15,34 +15,24 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,900&family=Archivo:wght@500;600;700;800&family=Zen+Kaku+Gothic+New:wght@500;700;900&family=Noto+Sans+JP:wght@400;500;700&family=Parisienne&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/css/tokens.css?v=20260913b">
-<link rel="stylesheet" href="assets/css/site.css?v=20260913b">
-<script defer src="assets/js/site.js?v=20260913b"></script>
-<script defer src="assets/js/members.js?v=20260913b"></script>
+<link rel="preload" as="image" href="assets/webp/hero-keyvisual.webp" fetchpriority="high">
+<link rel="stylesheet" href="assets/css/tokens.css?v=20260914a">
+<link rel="stylesheet" href="assets/css/site.css?v=20260914a">
+<script defer src="assets/js/site.js?v=20260914a"></script>
+<script defer src="assets/js/members.js?v=20260914a"></script>
+<script defer src="assets/js/hero.js?v=20260914a"></script>
 </head>
 <body>
 <main class="page">
 
-  <!-- HERO -->
+  <!-- HERO SLIDER -->
   <section class="hero">
     <div class="container">
-      <div class="hero-copy">
-        <img class="hero-logo" src="assets/webp/logo_main.webp" alt="SuccuChan">
-        <h1 class="hero-h1"><span style="white-space:nowrap">人間界って、</span><br><span style="white-space:nowrap">こんなに<em>面白い。</em></span></h1>
-        <p class="hero-en">Six girls &middot; One house &middot; A more colorful tomorrow</p>
-      </div>
-      <div class="hero-kv" id="heroKv" role="img" aria-label="SuccuChan メンバー集合キービジュアル（準備中）">
-        <!-- 差し替え用: assets/webp/hero-keyvisual.webp (2560x1440 / 16:9) と
-             任意の hero-keyvisual-mobile.webp を置くだけで自動表示されます -->
-        <picture class="hero-kv-img" hidden>
-          <!-- 将来 mobile専用KVを用意したら次行を有効化:
-          <source media="(max-width:680px)" srcset="assets/webp/hero-keyvisual-mobile.webp"> -->
-          <img src="assets/webp/hero-keyvisual.webp" alt="SuccuChan メンバー集合キービジュアル" decoding="async">
-        </picture>
-        <div class="kv-ph">
-          <svg viewBox="0 0 64 40" fill="none" aria-hidden="true"><path d="M14 22C8 16 6 8 8 3c6 2 11 8 12 14" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><path d="M50 22c6-6 8-14 6-19-6 2-11 8-12 14" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><path d="M20 30c0-7 5-11 12-11s12 4 12 11" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg>
-          <div class="kv-mark">Key Visual Coming Soon</div>
-          <div class="kv-sub">集合キービジュアル 準備中 &middot; 2560&times;1440</div>
+      <h1 class="sr-only">SuccuChan（サキュちゃん）公式サイト — 人間界って、こんなに面白い。</h1>
+      <div class="hero-slider" data-hero aria-roledescription="carousel" aria-label="SuccuChan ハイライト">
+        <!-- スライドは assets/data/hero.json から生成（追加・差し替えは JSON のみ） -->
+        <div class="hs-fallback">
+          <img src="assets/webp/hero-keyvisual.webp" alt="SuccuChan メンバー集合キービジュアル" fetchpriority="high" decoding="async">
         </div>
       </div>
     </div>
@@ -65,11 +55,18 @@
   <!-- SUCCU WORLD PREVIEW -->
   <section class="sect">
     <div class="container">
-      <a class="tease tease--wide" href="succu-world.html">
-        <span class="t-en">SUCCU WORLD</span>
-        <span class="t-ja">サキュちゃんたちの日常 4コマ</span>
-        <span class="t-desc">6人＋愛猫NOXの、ちょっとデビルな毎日。日常を切り取った4コマ劇場。</span>
-        <span class="t-go">ENTER <span class="arw">→</span></span>
+      <a class="tease tease--wide tease--comic" href="succu-world.html">
+        <div class="tc-text">
+          <span class="t-en">SUCCU WORLD</span>
+          <span class="t-badge">4-Panel Comics &middot; 4コマ漫画</span>
+          <span class="t-desc">6人＋愛猫NOXの、ちょっとデビルな毎日を切り取った4コマ劇場。読むだけで、6人の距離感が見えてくる。</span>
+          <span class="t-go t-go--static">READ COMICS <span class="arw">→</span></span>
+        </div>
+        <div class="tc-strip" aria-hidden="true">
+          <img src="assets/webp/comics/20260906-003_jp.webp" alt="" loading="lazy" decoding="async">
+          <img src="assets/webp/comics/20260906-002_jp.webp" alt="" loading="lazy" decoding="async">
+          <img src="assets/webp/comics/20260905-003_jp.webp" alt="" loading="lazy" decoding="async">
+        </div>
       </a>
     </div>
   </section>
