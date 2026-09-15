@@ -644,3 +644,40 @@ main{display:block}
   .tc-strip{grid-template-columns:repeat(3,1fr)}
   .tc-strip img{height:34vw}
 }
+
+/* ============================================================
+   HOME · large content banners (SUCCU WORLD / GALLERY / CREATE TOGETHER)
+   共通コンポーネント。画像内に文字情報があるため外側にタイトルは重ねない。
+   3枚ともサイズ感・角丸・余白ルールを統一。
+   ============================================================ */
+.home-banner{display:block;position:relative;width:100%;border-radius:var(--r-lg);overflow:hidden;background:var(--mist);box-shadow:var(--shadow-sm);
+  transition:transform var(--dur) var(--ease),box-shadow var(--dur)}
+.home-banner img{display:block;width:100%;aspect-ratio:19/10;object-fit:cover;object-position:var(--bpos,center);transition:transform .5s var(--ease)}
+.home-banner:hover{transform:translateY(-3px);box-shadow:var(--shadow-md)}
+.home-banner:hover img{transform:scale(1.02)}
+.home-banner:focus-visible{outline:2px solid var(--violet);outline-offset:3px}
+
+/* latest 4-koma strip under the SUCCU WORLD banner (既存4コマを流用) */
+.home-strip{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(8px,1.2vw,14px);margin-top:clamp(14px,1.8vw,22px)}
+.home-strip img{width:100%;height:clamp(150px,17vw,210px);object-fit:cover;object-position:top center;border-radius:var(--r-md);
+  border:1px solid var(--hairline);box-shadow:var(--shadow-sm);background:#fff;transition:transform var(--dur) var(--ease)}
+.home-strip:hover img{transform:translateY(-4px)}
+
+/* representative gallery preview under the GALLERY banner (代表作のみ・全体はGalleryへ) */
+.gallery-preview{display:grid;grid-template-columns:repeat(6,1fr);gap:clamp(8px,1.1vw,14px);margin-top:clamp(14px,1.8vw,22px)}
+.gallery-preview img{width:100%;aspect-ratio:3/4;object-fit:cover;border-radius:var(--r-md);
+  border:1px solid var(--hairline);box-shadow:var(--shadow-sm);transition:transform var(--dur) var(--ease)}
+.gallery-preview:hover img{transform:translateY(-3px)}
+
+/* CREATE TOGETHER entry links under the banner (最大3導線・説明文は足さない) */
+.ct-links{display:flex;flex-wrap:wrap;gap:clamp(10px,1.4vw,16px);margin-top:clamp(16px,2vw,24px);justify-content:center}
+
+@media (max-width:760px){
+  .gallery-preview{grid-template-columns:repeat(3,1fr)}
+}
+@media (max-width:460px){
+  .home-strip{gap:8px}
+  .gallery-preview{grid-template-columns:repeat(3,1fr)}
+  .ct-links{gap:10px}
+  .ct-links .btn{flex:1 1 100%;justify-content:center}
+}

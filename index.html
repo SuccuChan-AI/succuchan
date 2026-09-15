@@ -16,11 +16,11 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,900&family=Archivo:wght@500;600;700;800&family=Zen+Kaku+Gothic+New:wght@500;700;900&family=Noto+Sans+JP:wght@400;500;700&family=Parisienne&display=swap" rel="stylesheet">
 <link rel="preload" as="image" href="assets/webp/hero-keyvisual.webp" fetchpriority="high">
-<link rel="stylesheet" href="assets/css/tokens.css?v=20260915c">
-<link rel="stylesheet" href="assets/css/site.css?v=20260915c">
-<script defer src="assets/js/site.js?v=20260915c"></script>
-<script defer src="assets/js/members.js?v=20260915c"></script>
-<script defer src="assets/js/hero.js?v=20260915c"></script>
+<link rel="stylesheet" href="assets/css/tokens.css?v=20260915d">
+<link rel="stylesheet" href="assets/css/site.css?v=20260915d">
+<script defer src="assets/js/site.js?v=20260915d"></script>
+<script defer src="assets/js/members.js?v=20260915d"></script>
+<script defer src="assets/js/hero.js?v=20260915d"></script>
 </head>
 <body>
 <main class="page">
@@ -70,6 +70,20 @@
     </div>
   </section>
 
+  <!-- SUCCU WORLD (banner entry → latest 4-koma) -->
+  <section class="sect">
+    <div class="container">
+      <a class="home-banner" href="succu-world.html" aria-label="SUCCU WORLD — 4コマ漫画を読む">
+        <img src="assets/webp/banners/succu-world.webp" alt="SUCCU WORLD 4コマ漫画 — サキュちゃんたちの、ちょっと特別な日常。" loading="lazy" decoding="async">
+      </a>
+      <a class="home-strip" href="succu-world.html" aria-label="最新の4コマ一覧を読む">
+        <img src="assets/webp/comics/20260906-003_jp.webp" alt="最新の4コマ" loading="lazy" decoding="async">
+        <img src="assets/webp/comics/20260906-002_jp.webp" alt="最新の4コマ" loading="lazy" decoding="async">
+        <img src="assets/webp/comics/20260905-003_jp.webp" alt="最新の4コマ" loading="lazy" decoding="async">
+      </a>
+    </div>
+  </section>
+
   <!-- MEDIA PREVIEW (2 lite-embeds: サムネ→クリックで再生。TOPを重くしない) -->
   <section class="sect">
     <div class="container">
@@ -103,54 +117,46 @@
     </div>
   </section>
 
-  <!-- SUCCU WORLD PREVIEW -->
+  <!-- GALLERY (banner entry → representative preview) -->
   <section class="sect">
     <div class="container">
-      <a class="tease tease--wide tease--comic" href="succu-world.html">
-        <div class="tc-text">
-          <span class="t-en">SUCCU WORLD</span>
-          <span class="t-badge">4-Panel Comics &middot; 4コマ漫画</span>
-          <span class="t-desc">6人＋愛猫NOXの、ちょっとデビルな毎日を切り取った4コマ劇場。読むだけで、6人の距離感が見えてくる。</span>
-          <span class="t-go t-go--static">READ COMICS <span class="arw">→</span></span>
-        </div>
-        <div class="tc-strip" aria-hidden="true">
-          <img src="assets/webp/comics/20260906-003_jp.webp" alt="" loading="lazy" decoding="async">
-          <img src="assets/webp/comics/20260906-002_jp.webp" alt="" loading="lazy" decoding="async">
-          <img src="assets/webp/comics/20260905-003_jp.webp" alt="" loading="lazy" decoding="async">
-        </div>
+      <a class="home-banner" href="gallery.html" aria-label="GALLERY — 作品を見る">
+        <img src="assets/webp/banners/gallery.webp" alt="SuccuChan GALLERY — サキュちゃんたちの、もっと好きが見つかる。" loading="lazy" decoding="async">
+      </a>
+      <a class="gallery-preview" href="gallery.html" aria-label="ギャラリーで代表作品を見る">
+        <img src="assets/webp/gallery/rina/rina_0002.webp" alt="RINA アート" loading="lazy" decoding="async">
+        <img src="assets/webp/gallery/hika/hika_0001.webp" alt="HIKA アート" loading="lazy" decoding="async">
+        <img src="assets/webp/gallery/koto/koto_0005.webp" alt="KOTO アート" loading="lazy" decoding="async">
+        <img src="assets/webp/gallery/mayu/mayu_0003.webp" alt="MAYU アート" loading="lazy" decoding="async">
+        <img src="assets/webp/gallery/aya/aya_0002.webp" alt="AYA アート" loading="lazy" decoding="async">
+        <img src="assets/webp/gallery/ray/ray_0001.webp" alt="RAY アート" loading="lazy" decoding="async">
       </a>
     </div>
   </section>
 
-  <!-- GALLERY + DRESS UP -->
+  <!-- DRESS UP (kept, Coming Soon) -->
   <section class="sect--tight">
     <div class="container">
-      <div class="tease-grid">
-        <a class="tease" href="gallery.html">
-          <span class="t-en">GALLERY</span>
-          <span class="t-ja">キャラクターアート</span>
-          <span class="t-desc">キービジュアルから日常まで、SuccuChanのアートコレクション。</span>
-          <span class="t-go">VIEW <span class="arw">→</span></span>
-        </a>
-        <a class="tease" href="dress-up.html">
-          <span class="t-en">DRESS UP</span>
-          <span class="t-ja">SuccuChan Closet</span>
-          <span class="t-desc">衣装で彩る、6人のスタイリング。<span class="soon" style="vertical-align:middle;margin-left:6px">Coming Soon</span></span>
-          <span class="t-go">STYLING <span class="arw">→</span></span>
-        </a>
+      <a class="tease tease--wide" href="dress-up.html">
+        <span class="t-en">DRESS UP</span>
+        <span class="t-ja">SuccuChan Closet</span>
+        <span class="t-desc">衣装で彩る、6人のスタイリング。<span class="soon" style="vertical-align:middle;margin-left:6px">Coming Soon</span></span>
+        <span class="t-go">STYLING <span class="arw">→</span></span>
+      </a>
+    </div>
+  </section>
+
+  <!-- CREATE TOGETHER (banner entry → minimal entry links) -->
+  <section class="sect">
+    <div class="container">
+      <a class="home-banner" href="fan-creation.html" aria-label="CREATE TOGETHER へ">
+        <img src="assets/webp/banners/create-together.webp" alt="CREATE TOGETHER — 描く。作る。連れていく。あなたの好きな人間界へ、SuccuChanを。" loading="lazy" decoding="async">
+      </a>
+      <div class="ct-links">
+        <a class="btn btn--ghost" href="fan-creation.html#creator-kit">REFERENCE SHEET <span class="arw">→</span></a>
+        <a class="btn btn--ghost" href="fan-creation.html#guidelines">GUIDELINES <span class="arw">→</span></a>
+        <a class="btn btn--solid" href="fan-creation.html#choose">CREATE <span class="arw">→</span></a>
       </div>
-    </div>
-  </section>
-
-  <!-- CREATE TOGETHER PREVIEW -->
-  <section class="sect--tight">
-    <div class="container">
-      <a class="tease tease--wide" href="fan-creation.html">
-        <span class="t-en">CREATE TOGETHER</span>
-        <span class="t-ja">あなたの好きな人間界へ。</span>
-        <span class="t-desc">好きな場所・食・スポーツ・動物・趣味へ。SuccuChanの6人と、一緒に新しい人間界をつくる場所。</span>
-        <span class="t-go">CREATE TOGETHER <span class="arw">→</span></span>
-      </a>
     </div>
   </section>
 
