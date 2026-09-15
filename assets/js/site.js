@@ -36,7 +36,6 @@
   header.innerHTML =
     '<div class="container">' +
       '<a class="brand" href="index.html" aria-label="SuccuChan TOP">' +
-        '<img class="sym" src="assets/webp/logo_symbol.webp" alt="">' +
         '<img src="assets/webp/logo_main.webp" alt="SuccuChan">' +
       "</a>" +
       '<nav class="nav" aria-label="Global">' + navLinks + "</nav>" +

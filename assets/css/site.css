@@ -62,9 +62,8 @@ h1,h2,h3,p{margin:0}
   border-bottom:1px solid var(--hairline);
 }
 .site-header .container{display:flex;align-items:center;gap:24px;width:100%;max-width:var(--container-wide)}
-.brand{display:flex;align-items:center;gap:10px;flex-shrink:0}
-.brand img{height:26px;width:auto}
-.brand .sym{height:30px}
+.brand{display:flex;align-items:center;flex-shrink:0}
+.brand img{height:clamp(30px,3.2vw,38px);width:auto}
 .nav{display:flex;align-items:center;gap:clamp(10px,1.4vw,26px);margin-left:auto}
 .nav a{
   font-family:var(--font-en);font-weight:600;font-size:12.5px;letter-spacing:.12em;text-transform:uppercase;
@@ -615,7 +614,9 @@ main{display:block}
   .hs-title{font-size:clamp(21px,6.4vw,30px)}
   .hs-sub{max-width:32ch}
   .hs-arrow{display:none}
-  .hs-faces{align-items:center;flex-wrap:wrap;gap:10px;padding-top:0;padding-bottom:34%}
+  /* keep the 6 faces as a single top strip (no wrap behind the copy) */
+  .hs-faces{align-items:flex-start;flex-wrap:nowrap;gap:2vw;padding:clamp(20px,5.5vw,34px) 12px 0}
+  .hs-faces span{width:clamp(40px,13.2vw,60px);height:clamp(40px,13.2vw,60px);border-width:2px}
 }
 
 /* ============================================================

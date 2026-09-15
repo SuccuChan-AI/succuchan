@@ -19,12 +19,18 @@
     return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c];
   }); }
 
+  function subHtml(sub) {
+    // string, or array of lines (blank string => paragraph gap)
+    var lines = Array.isArray(sub) ? sub : String(sub).split("\n");
+    return lines.map(function (l) { return l === "" ? "" : esc(l); }).join("<br>");
+  }
+
   function slideInner(s, eager) {
     var body =
       '<div class="hs-body">' +
         (s.label ? '<span class="hs-label">' + esc(s.label) + "</span>" : "") +
         (s.title ? '<span class="hs-title">' + esc(s.title) + "</span>" : "") +
-        (s.sub ? '<span class="hs-sub">' + esc(s.sub) + "</span>" : "") +
+        (s.sub && s.sub.length ? '<span class="hs-sub">' + subHtml(s.sub) + "</span>" : "") +
         '<span class="hs-cta">' + esc(s.cta) + ' <span class="arw" aria-hidden="true">&rarr;</span></span>' +
       "</div>";
 
@@ -54,7 +60,7 @@
         (ext ? ' target="_blank" rel="noopener"' : "") +
         ' data-i="' + i + '"' +
         (i === 0 ? "" : ' aria-hidden="true" tabindex="-1"') +
-        ' aria-label="' + esc((s.label ? s.label + "：" : "") + (s.title || s.sub || s.cta)) + '">' +
+        ' aria-label="' + esc((s.label ? s.label + "：" : "") + (s.title || (Array.isArray(s.sub) ? s.sub.join(" ") : s.sub) || s.cta)) + '">' +
         slideInner(s, i === 0) +
       "</a>";
     }).join("") + "</div>";

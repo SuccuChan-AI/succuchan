@@ -39,11 +39,17 @@
     {
       "id": "fan-creation",
       "kind": "brand",
-      "label": "Fan Creation",
+      "label": "Create Together",
       "title": "あなたの好きな人間界へ。",
-      "sub": "描く。着せる。教える。連れていく。",
+      "sub": [
+        "行きたい場所。",
+        "食べてほしいもの。",
+        "体験してほしいこと。",
+        "",
+        "SuccuChanの6人と、まだ知らない「好き」を増やしてみませんか。"
+      ],
       "faces": ["rina", "hika", "koto", "mayu", "aya", "ray"],
-      "cta": "FAN CREATION",
+      "cta": "CREATE TOGETHER",
       "href": "fan-creation.html"
     }
   ]
