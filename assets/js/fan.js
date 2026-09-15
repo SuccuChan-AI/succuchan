@@ -1,5 +1,5 @@
 /* ============================================================
-   SuccuChan v2 — FAN CREATION (choose / reference, data-driven)
+   SuccuChan v2 — CREATE TOGETHER (choose / reference sheets, data-driven)
    ============================================================ */
 (function () {
   var chooseRoot = document.querySelector("[data-choose]");
@@ -13,9 +13,7 @@
       if (chooseRoot) renderChoose(chooseRoot, chars);
       if (refRoot) renderReference(refRoot, chars);
     })
-    .catch(function (e) { console.error("fan-creation load failed", e); });
-
-  function li(arr) { return arr.map(function (x) { return "<li>" + x + "</li>"; }).join(""); }
+    .catch(function (e) { console.error("create-together load failed", e); });
 
   function renderChoose(el, chars) {
     el.innerHTML = chars.map(function (c) {
@@ -29,33 +27,88 @@
     }).join("");
   }
 
+  var zoomSvg = '<svg viewBox="0 0 24 24" fill="none" width="18" height="18" aria-hidden="true">' +
+    '<circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="2"/>' +
+    '<path d="M16.5 16.5L21 21" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>' +
+    '<path d="M11 8.2v5.6M8.2 11h5.6" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>';
+
   function renderReference(el, chars) {
-    el.innerHTML = chars.map(function (c) {
-      var r = c.ref;
-      return '<div class="fc-ref-card" style="--mc:' + c.color + '">' +
-        '<div class="ref-img">' +
-          '<div class="ref-ph" role="img" aria-label="' + c.name + ' キャラクターリファレンス（準備中）">' +
-            '<span class="ref-ph-name">' + c.name + "</span>" +
-            '<span class="ref-ph-label">Character Reference</span>' +
-            '<span class="soon">Coming Soon</span>' +
-          "</div>" +
-          '<img src="' + c.referenceImage + '" alt="' + c.name + ' キャラクターリファレンス" hidden ' +
-            'onload="this.hidden=false;this.previousElementSibling.hidden=true" onerror="this.remove()">' +
-        "</div>" +
-        '<div class="ref-body">' +
-          '<div class="ref-head"><span class="ref-avatar"><img src="' + c.face + '" alt="" aria-hidden="true"></span>' +
-            '<span class="ref-name">' + c.name + "<i>" + c.nameJa + "</i></span></div>" +
-          '<dl class="ref-specs">' +
-            "<dt>Hair</dt><dd>" + r.hair + "</dd>" +
-            "<dt>Eyes</dt><dd>" + r.eyes + "</dd>" +
-            "<dt>Horns</dt><dd>" + r.horns + "</dd>" +
-            "<dt>Tail</dt><dd>" + r.tail + "</dd>" +
-            "<dt>Key Features</dt><dd>" + r.features + "</dd>" +
-          "</dl>" +
-          '<div class="ref-tags"><span class="ref-tags-lbl">Personality</span><ul>' + li(r.personality) + "</ul></div>" +
-          '<div class="ref-tags"><span class="ref-tags-lbl">Interests</span><ul>' + li(r.interests) + "</ul></div>" +
-        "</div>" +
-      "</div>";
+    // Each sheet is self-contained (portrait / full body / specs / chibi / details).
+    el.innerHTML = chars.map(function (c, i) {
+      return '<button type="button" class="fc-ref-item" data-i="' + i + '" style="--mc:' + c.color + '" ' +
+        'aria-label="' + c.name + '（' + c.nameJa + '）のリファレンスシートを拡大表示">' +
+        '<img src="' + c.referenceImage + '" alt="' + c.name + '（' + c.nameJa + '）キャラクターリファレンスシート" ' +
+          'loading="lazy" decoding="async" ' +
+          'onerror="this.closest(\'.fc-ref-item\').classList.add(\'is-missing\')">' +
+        '<span class="ref-ph" aria-hidden="true">' +
+          '<span class="ref-ph-name">' + c.name + "</span>" +
+          '<span class="ref-ph-label">Reference Sheet</span>' +
+          '<span class="soon">Coming Soon</span>' +
+        "</span>" +
+        '<span class="ref-zoom" aria-hidden="true">' + zoomSvg + "</span>" +
+      "</button>";
     }).join("");
+
+    wireLightbox(el, chars.map(function (c) {
+      return { src: c.referenceImage, name: c.name + " / " + c.nameJa };
+    }));
+  }
+
+  function wireLightbox(el, items) {
+    if (!items.length) return;
+    var lb = document.createElement("div");
+    lb.className = "lightbox";
+    lb.hidden = true;
+    lb.setAttribute("role", "dialog");
+    lb.setAttribute("aria-modal", "true");
+    lb.setAttribute("aria-label", "リファレンスシート拡大表示");
+    lb.innerHTML =
+      '<button class="lb-close" type="button" aria-label="閉じる">&times;</button>' +
+      '<button class="lb-nav lb-prev" type="button" aria-label="前のシート">&lsaquo;</button>' +
+      '<div class="lb-stage"><img alt=""><div class="lb-cap"></div></div>' +
+      '<button class="lb-nav lb-next" type="button" aria-label="次のシート">&rsaquo;</button>';
+    document.body.appendChild(lb);
+
+    var img = lb.querySelector("img");
+    var cap = lb.querySelector(".lb-cap");
+    var cur = 0, lastFocus = null;
+
+    function show(i) {
+      cur = (i + items.length) % items.length;
+      img.src = items[cur].src;
+      img.alt = items[cur].name + " キャラクターリファレンスシート";
+      cap.textContent = items[cur].name;
+    }
+    function open(i) {
+      lastFocus = document.activeElement;
+      show(i);
+      lb.hidden = false;
+      document.body.style.overflow = "hidden";
+      lb.querySelector(".lb-close").focus();
+    }
+    function close() {
+      lb.hidden = true;
+      img.removeAttribute("src");
+      document.body.style.overflow = "";
+      if (lastFocus && lastFocus.focus) lastFocus.focus();
+    }
+    function step(d) { show(cur + d); }
+
+    el.querySelectorAll(".fc-ref-item").forEach(function (b) {
+      b.addEventListener("click", function () {
+        if (b.classList.contains("is-missing")) return;
+        open(+b.dataset.i);
+      });
+    });
+    lb.querySelector(".lb-close").addEventListener("click", close);
+    lb.querySelector(".lb-prev").addEventListener("click", function () { step(-1); });
+    lb.querySelector(".lb-next").addEventListener("click", function () { step(1); });
+    lb.addEventListener("click", function (e) { if (e.target === lb) close(); });
+    document.addEventListener("keydown", function (e) {
+      if (lb.hidden) return;
+      if (e.key === "Escape") close();
+      else if (e.key === "ArrowLeft") step(-1);
+      else if (e.key === "ArrowRight") step(1);
+    });
   }
 })();

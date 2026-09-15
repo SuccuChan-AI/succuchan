@@ -16,11 +16,11 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,900&family=Archivo:wght@500;600;700;800&family=Zen+Kaku+Gothic+New:wght@500;700;900&family=Noto+Sans+JP:wght@400;500;700&family=Parisienne&display=swap" rel="stylesheet">
 <link rel="preload" as="image" href="assets/webp/hero-keyvisual.webp" fetchpriority="high">
-<link rel="stylesheet" href="assets/css/tokens.css?v=20260915b">
-<link rel="stylesheet" href="assets/css/site.css?v=20260915b">
-<script defer src="assets/js/site.js?v=20260915b"></script>
-<script defer src="assets/js/members.js?v=20260915b"></script>
-<script defer src="assets/js/hero.js?v=20260915b"></script>
+<link rel="stylesheet" href="assets/css/tokens.css?v=20260915c">
+<link rel="stylesheet" href="assets/css/site.css?v=20260915c">
+<script defer src="assets/js/site.js?v=20260915c"></script>
+<script defer src="assets/js/members.js?v=20260915c"></script>
+<script defer src="assets/js/hero.js?v=20260915c"></script>
 </head>
 <body>
 <main class="page">
@@ -44,7 +44,7 @@
       <div class="about-strip">
         <div>
           <span class="eyebrow">About</span>
-          <p class="lead" style="margin-top:16px">SuccuChanは、AIから生まれた6人のキャラクターが、<br>現実の人間界を知り、経験していくCharacter IP。</p>
+          <p class="lead" style="margin-top:16px">SuccuChanは、異世界からやってきた、ちょっとデビルな6人の女の子たちが、<br>現実の人間界を知り、経験していくCharacter IP。</p>
           <p class="body">彼女たちの視点を通して、人間には当たり前になったものを、もう一度いっしょに「面白い」と見つけていく。</p>
           <a class="btn btn--solid" style="margin-top:22px" href="about.html">MORE ABOUT <span class="arw">→</span></a>
         </div>
@@ -70,6 +70,39 @@
     </div>
   </section>
 
+  <!-- MEDIA PREVIEW (2 lite-embeds: サムネ→クリックで再生。TOPを重くしない) -->
+  <section class="sect">
+    <div class="container">
+      <div class="sect-head">
+        <div>
+          <span class="eyebrow">Media</span>
+          <h2 class="sect-title" style="margin-top:14px">MEDIA<span class="jp">映像作品を、見つける入口</span></h2>
+        </div>
+        <a class="btn btn--ghost" href="media.html">VIEW ALL <span class="arw">→</span></a>
+      </div>
+      <div class="home-media">
+        <div class="mwork">
+          <div class="yt-embed" data-orient="horizontal">
+            <button class="yt-facade" data-id="4zqkDEjoobo" aria-label="NOX Morning Patrol を再生">
+              <img class="yt-thumb" src="assets/webp/media/nox-morning-patrol.webp" alt="NOX Morning Patrol サムネイル" loading="lazy" decoding="async">
+              <span class="yt-play" aria-hidden="true"></span>
+            </button>
+          </div>
+          <div class="mwork-cap"><span class="cat">EPISODE</span><h3>NOX Morning Patrol</h3><p>NOXと歩く、SuccuChan Houseの静かな朝。</p></div>
+        </div>
+        <div class="mwork">
+          <div class="yt-embed" data-orient="horizontal">
+            <button class="yt-facade" data-id="XkYNPhDMrU8" aria-label="6人で過ごすチルタイム を再生">
+              <img class="yt-thumb" src="assets/webp/media/six-girls-chill.webp" alt="6人で過ごすチルタイム サムネイル" loading="lazy" decoding="async">
+              <span class="yt-play" aria-hidden="true"></span>
+            </button>
+          </div>
+          <div class="mwork-cap"><span class="cat">AMBIENT</span><h3>6人で過ごすチルタイム</h3><p>6人それぞれの日常を、RINAの音楽と一緒に。</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- SUCCU WORLD PREVIEW -->
   <section class="sect">
     <div class="container">
@@ -85,19 +118,6 @@
           <img src="assets/webp/comics/20260906-002_jp.webp" alt="" loading="lazy" decoding="async">
           <img src="assets/webp/comics/20260905-003_jp.webp" alt="" loading="lazy" decoding="async">
         </div>
-      </a>
-    </div>
-  </section>
-
-  <!-- MEDIA PREVIEW -->
-  <section class="sect--tight">
-    <div class="container">
-      <a class="tease tease--wide tease--media" href="media.html">
-        <span class="t-en" style="display:block">MEDIA</span>
-        <span class="t-ja">1st MV「HUMAN WORLD！」公開中</span>
-        <span class="t-desc">RINAが手がけたオープニングMV。SuccuChanの映像作品はこちらから。</span>
-        <span class="media-play" aria-hidden="true"></span>
-        <span class="t-go">WATCH <span class="arw">→</span></span>
       </a>
     </div>
   </section>
@@ -141,6 +161,19 @@ window.addEventListener("load", function () {
   var src = document.querySelector(".site-footer .sns");
   var dst = document.querySelector("[data-sns]");
   if (src && dst) dst.innerHTML = src.innerHTML;
+});
+/* HOME MEDIA lite-embed: サムネをクリックした時だけ YouTube iframe を読み込む（初期表示は軽量） */
+document.querySelectorAll(".home-media .yt-facade").forEach(function (btn) {
+  btn.addEventListener("click", function () {
+    var id = btn.dataset.id, wrap = btn.parentNode;
+    var ifr = document.createElement("iframe");
+    ifr.className = "yt-iframe";
+    ifr.src = "https://www.youtube.com/embed/" + id + "?autoplay=1&rel=0&playsinline=1";
+    ifr.title = "YouTube video player";
+    ifr.setAttribute("allow", "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share");
+    ifr.setAttribute("allowfullscreen", "");
+    wrap.replaceChild(ifr, btn);
+  });
 });
 </script>
 </body>

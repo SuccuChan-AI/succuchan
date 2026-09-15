@@ -18,3 +18,6 @@ assets/gallery/**/*.jpeg
 assets/gallery/**/*.webp
 assets/media/**
 !assets/media/.gitkeep
+
+# CREATE TOGETHER リファレンスシートmasterは非公開（公開は同dirの-reference.webp）
+assets/fan-creation/*.png
