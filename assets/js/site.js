@@ -9,7 +9,7 @@
     { en: "GALLERY",      href: "gallery.html" },
     { en: "DRESS UP",     href: "dress-up.html" },
     { en: "MEDIA",        href: "media.html" },
-    { en: "FAN CREATION", href: "fan-creation.html" },
+    { en: "CREATE TOGETHER", href: "fan-creation.html" },
     { en: "ABOUT",        href: "about.html" }
   ];
   var SNS = [
