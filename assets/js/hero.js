@@ -103,7 +103,9 @@
 
     var interval = data.autoplayMs || 7000;
     function stop() { if (timer) { clearInterval(timer); timer = null; } }
-    function start() { if (reduce || n < 2) return; stop(); timer = setInterval(function () { next(false); }, interval); }
+    // Auto-advance on a timer. Under prefers-reduced-motion the crossfade is
+    // instant (see CSS), so slides simply swap without animation.
+    function start() { if (n < 2) return; stop(); timer = setInterval(function () { next(false); }, interval); }
     function restart() { stop(); start(); }
 
     el.querySelector(".hs-next").addEventListener("click", function () { next(true); });
