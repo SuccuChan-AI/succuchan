@@ -5,12 +5,14 @@
   var NAV = [
     { en: "TOP",          href: "index.html" },
     { en: "MEMBERS",      href: "members.html" },
+    { en: "MEDIA",        href: "media.html" },
     { en: "SUCCU WORLD",  href: "succu-world.html" },
     { en: "GALLERY",      href: "gallery.html" },
-    { en: "DRESS UP",     href: "dress-up.html" },
-    { en: "MEDIA",        href: "media.html" },
+    { en: "ACADEMY",      href: "academy.html" },
     { en: "CREATE TOGETHER", href: "fan-creation.html" },
     { en: "ABOUT",        href: "about.html" }
+    // DRESS UP: 主要ナビからは一旦外す（ページ/データは保持・HOME下部にComing Soon）。
+    // KOTOの衣装が揃ったら { en:"DRESS UP", href:"dress-up.html" } を再追加する
   ];
   var SNS = [
     { label: "X", href: "https://x.com/SuccuChan_AI", d: "M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" },

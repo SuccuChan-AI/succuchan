@@ -681,3 +681,85 @@ main{display:block}
   .ct-links{gap:10px}
   .ct-links .btn{flex:1 1 100%;justify-content:center}
 }
+
+/* ============================================================
+   ACADEMY page (Succu Academy / Succu Animals) — HIKA blue accent
+   ============================================================ */
+.ac-page{--accent:var(--c-hika)}              /* eyebrow/線/ボタン/リンクが青系に */
+
+.ac-hero-sec{padding-bottom:0}
+.ac-hero{width:100%;border-radius:var(--r-lg);overflow:hidden;background:var(--mist);box-shadow:var(--shadow-md)}
+.ac-hero img{display:block;width:100%;aspect-ratio:1672/941;object-fit:cover;object-position:center}
+
+/* intro */
+.ac-intro{max-width:780px}
+.ac-lead{font-family:var(--font-jp-head);font-weight:900;font-size:var(--fs-h2);line-height:1.5;margin-top:16px}
+.ac-intro-body{margin-top:18px;color:var(--ink-55);font-size:var(--fs-sm);line-height:2}
+
+/* series blocks (SUCCU ACADEMY / SUCCU ANIMALS) */
+.ac-series{max-width:760px}
+.ac-series-copy{margin-top:20px;color:var(--ink-80);font-size:var(--fs-sm);line-height:2.05;max-width:64ch}
+.ac-series-copy--sub{margin-top:16px;color:var(--ink-55)}
+.ac-points{display:flex;flex-wrap:wrap;gap:9px;margin-top:22px}
+.ac-points li{font-family:var(--font-jp-head);font-weight:700;font-size:var(--fs-xs);padding:8px 15px;border-radius:var(--r-pill);
+  border:1px solid var(--accent-line);color:var(--accent);background:var(--accent-soft)}
+.ac-x{margin-top:26px;border-color:var(--accent);color:var(--accent)}
+.ac-x:hover{background:var(--accent);border-color:var(--accent);color:#fff}
+.ac-x b{font-weight:800;letter-spacing:.02em}
+
+/* SUCCU ANIMALS 実写ポリシー note */
+.ac-note{display:flex;gap:12px;align-items:flex-start;margin-top:22px;max-width:64ch;
+  background:#fff;border:1px solid var(--hairline);border-left:3px solid var(--accent);border-radius:var(--r-md);
+  padding:14px 16px;color:var(--ink-80);font-size:var(--fs-sm);line-height:1.85}
+.ac-note-badge{flex-shrink:0;font-family:var(--font-en);font-weight:800;letter-spacing:.12em;text-transform:uppercase;font-size:10px;
+  color:var(--accent);border:1px solid var(--accent-line);background:var(--accent-soft);border-radius:var(--r-pill);padding:5px 11px;margin-top:1px}
+
+/* archive area */
+.ac-tabs{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:clamp(22px,3vw,34px)}
+.ac-tab{font-family:var(--font-en);font-weight:700;letter-spacing:.08em;font-size:var(--fs-sm);padding:9px 18px;border-radius:var(--r-pill);
+  border:1.5px solid var(--hairline);background:#fff;color:var(--ink-55);display:inline-flex;align-items:center;gap:8px;
+  transition:background var(--dur),color var(--dur),border-color var(--dur)}
+.ac-tab:hover{color:var(--ink);border-color:var(--accent-line)}
+.ac-tab[aria-selected="true"]{background:var(--accent);border-color:var(--accent);color:#fff}
+.ac-count{font-family:var(--font-en);font-size:10px;font-weight:700;opacity:.75}
+
+.ac-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(16px,2vw,26px)}
+.ac-card{background:#fff;border:1px solid var(--hairline);border-radius:var(--r-lg);overflow:hidden;
+  transition:transform var(--dur) var(--ease),box-shadow var(--dur)}
+.ac-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-md)}
+.ac-thumb{position:relative;aspect-ratio:4/3;background:var(--mist);display:grid;place-items:center;overflow:hidden}
+.ac-thumb img{width:100%;height:100%;object-fit:cover}
+.ac-ph{color:var(--ink-35)}
+.ac-ph svg{width:34px;height:34px}
+.ac-cat{position:absolute;top:10px;left:10px;font-family:var(--font-en);font-weight:800;letter-spacing:.1em;font-size:10px;
+  padding:4px 10px;border-radius:var(--r-pill);background:rgba(255,255,255,.92);color:var(--accent);box-shadow:var(--shadow-sm)}
+.ac-body{padding:16px 18px}
+.ac-title{font-family:var(--font-jp-head);font-weight:900;font-size:var(--fs-h3);line-height:1.4}
+.ac-meta{margin-top:8px;font-family:var(--font-en);font-weight:700;letter-spacing:.04em;font-size:var(--fs-xs);color:var(--ink-35)}
+.ac-sub{margin-top:10px;color:var(--ink-55);font-size:var(--fs-sm);line-height:1.8}
+.ac-tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px}
+.ac-tags li{font-size:var(--fs-xs);padding:3px 10px;border-radius:var(--r-pill);border:1px solid var(--hairline);color:var(--ink-55)}
+
+/* empty state */
+.ac-empty{text-align:center;padding:clamp(44px,7vw,84px) 20px;border:1px dashed color-mix(in srgb,var(--accent) 30%,var(--hairline));
+  border-radius:var(--r-lg);background:#fff}
+.ac-empty-mark{color:var(--accent);font-size:26px;line-height:1}
+.ac-empty p{font-family:var(--font-en);font-weight:800;letter-spacing:.08em;font-size:var(--fs-h3);margin-top:12px;color:var(--ink)}
+.ac-empty-sub{display:block;margin-top:12px;color:var(--ink-55);font-size:var(--fs-sm);line-height:1.85}
+
+/* HIKA's perspective */
+.ac-persp{max-width:760px;border-left:4px solid var(--accent);padding-left:clamp(20px,3vw,34px)}
+.ac-persp-title{font-family:var(--font-display);font-weight:900;font-size:var(--fs-h2);letter-spacing:-.01em;margin-top:12px}
+.ac-persp-body{margin-top:20px}
+.ac-persp-body p{color:var(--ink-80);font-size:var(--fs-sm);line-height:2.05;margin-top:10px}
+.ac-persp-body em{font-style:normal;color:var(--accent);font-weight:700}
+
+/* related links */
+.ac-related{display:flex;gap:14px;flex-wrap:wrap;justify-content:center}
+
+@media (max-width:900px){ .ac-grid{grid-template-columns:repeat(2,1fr)} }
+@media (max-width:560px){
+  .ac-grid{grid-template-columns:1fr}
+  .ac-note{flex-direction:column}
+  .ac-related .btn{flex:1 1 100%;justify-content:center}
+}

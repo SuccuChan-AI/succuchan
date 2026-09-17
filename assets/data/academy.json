@@ -1,0 +1,5 @@
+{
+  "_note": "Succu Academy / Succu Animals のアーカイブ用データ。今後 academy[] と animals[] にエントリを追加すれば academy.js が自動でカード描画します。実データが無い項目は空のままでOK。",
+  "academy": [],
+  "animals": []
+}
