@@ -686,15 +686,7 @@ main{display:block}
    ACADEMY page (Succu Academy / Succu Animals) — HIKA blue accent
    ============================================================ */
 .ac-page{--accent:var(--c-hika)}              /* eyebrow/線/ボタン/リンクが青系に */
-
-.ac-hero-sec{padding-bottom:0}
-.ac-hero{width:100%;border-radius:var(--r-lg);overflow:hidden;background:var(--mist);box-shadow:var(--shadow-md)}
-.ac-hero img{display:block;width:100%;aspect-ratio:1672/941;object-fit:cover;object-position:center}
-
-/* intro */
-.ac-intro{max-width:780px}
-.ac-lead{font-family:var(--font-jp-head);font-weight:900;font-size:var(--fs-h2);line-height:1.5;margin-top:16px}
-.ac-intro-body{margin-top:18px;color:var(--ink-55);font-size:var(--fs-sm);line-height:2}
+/* academy.html は他ページと同じ .page-intro ヘッダーを使用（大型バナーはHOME専用） */
 
 /* series blocks (SUCCU ACADEMY / SUCCU ANIMALS) */
 .ac-series{max-width:760px}
@@ -762,4 +754,16 @@ main{display:block}
   .ac-grid{grid-template-columns:1fr}
   .ac-note{flex-direction:column}
   .ac-related .btn{flex:1 1 100%;justify-content:center}
+}
+
+/* ============================================================
+   HOME · tighter vertical rhythm (banner導線を主役に。約28%詰める)
+   .home スコープなので他ページの余白は不変
+   ============================================================ */
+.home .sect{padding-block:clamp(40px,6.5vw,86px)}
+.home .sect--tight{padding-block:clamp(28px,4.3vw,52px)}
+.home .sect-head{margin-bottom:clamp(20px,3vw,36px)}
+@media (max-width:680px){
+  .home .sect{padding-block:clamp(36px,7vw,52px)}
+  .home .sect--tight{padding-block:clamp(28px,5vw,40px)}
 }
