@@ -13,6 +13,18 @@
       "href": "about.html"
     },
     {
+      "id": "a-night-in-succuchan-house",
+      "kind": "image",
+      "label": "Now on YouTube",
+      "sub": "同じ家で過ごす、6人それぞれの秋の夜。",
+      "image": "assets/webp/media/a-night-in-succuchan-house.webp",
+      "objectPosition": "center center",
+      "objectPositionMobile": "center center",
+      "cta": "WATCH",
+      "href": "https://youtu.be/Ht3W_H-jWJY",
+      "external": true
+    },
+    {
       "id": "nox-morning-patrol",
       "kind": "image",
       "label": "Now on YouTube",

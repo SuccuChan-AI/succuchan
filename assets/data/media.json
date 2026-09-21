@@ -14,6 +14,15 @@
       "featured": true
     },
     {
+      "id": "a-night-in-succuchan-house",
+      "title": "A Night in SuccuChan House",
+      "subtitle": "6人が過ごす秋の夜",
+      "category": "EPISODE",
+      "orientation": "horizontal",
+      "description": "同じ家の中で、それぞれが自分の時間を過ごす夜。カメラと一緒に、サキュちゃんたちの日常を少しだけ覗いてみてください。",
+      "youtubeId": "Ht3W_H-jWJY"
+    },
+    {
       "id": "quiet-protocol",
       "title": "Quiet Protocol",
       "subtitle": "HIKA’s Late Night Focus BGM｜作業・勉強用",
