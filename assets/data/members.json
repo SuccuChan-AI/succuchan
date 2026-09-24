@@ -1,6 +1,7 @@
 [
   {
     "id": "ray",
+    "mbti": { "type": "ESFJ-A", "name_en": "Consul", "name_ja": "領事官" },
     "name": "RAY",
     "nameJa": "レイ",
     "color": "#2e9e64",
@@ -21,6 +22,7 @@
   },
   {
     "id": "mayu",
+    "mbti": { "type": "ESFP-T", "name_en": "Entertainer", "name_ja": "エンターテイナー" },
     "name": "MAYU",
     "nameJa": "マユ",
     "color": "#c9910a",
@@ -41,6 +43,7 @@
   },
   {
     "id": "aya",
+    "mbti": { "type": "ESTP-A", "name_en": "Entrepreneur", "name_ja": "起業家" },
     "name": "AYA",
     "nameJa": "アヤ",
     "color": "#e2661e",
@@ -61,6 +64,7 @@
   },
   {
     "id": "hika",
+    "mbti": { "type": "INTP-T", "name_en": "Logician", "name_ja": "論理学者" },
     "name": "HIKA",
     "nameJa": "ヒカ",
     "color": "#1ca0c4",
@@ -81,6 +85,7 @@
   },
   {
     "id": "koto",
+    "mbti": { "type": "ENFP-T", "name_en": "Campaigner", "name_ja": "運動家" },
     "name": "KOTO",
     "nameJa": "コト",
     "color": "#7a34a6",
@@ -101,6 +106,7 @@
   },
   {
     "id": "rina",
+    "mbti": { "type": "ISTP-A", "name_en": "Virtuoso", "name_ja": "巨匠" },
     "name": "RINA",
     "nameJa": "リナ",
     "color": "#c4123e",

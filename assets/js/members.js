@@ -103,6 +103,7 @@
             '<div class="d-info-row">' +
               '<div><span class="k">Height</span><span class="v">' + m.height + '</span></div>' +
               '<div><span class="k">Birthday</span><span class="v">' + m.birthday + '</span></div>' +
+              (m.mbti ? '<div class="d-mbti"><span class="k">MBTI</span><span class="v">' + esc(m.mbti.type) + '<small class="mbti-name">' + esc(m.mbti.name_en) + ' / ' + esc(m.mbti.name_ja) + '</small></span></div>' : "") +
             "</div>" +
             '<ul class="d-likes">' + likes + "</ul>" +
             '<div class="d-explore"><div class="lbl">Explore ' + m.name + '</div><ul>' + explore + "</ul></div>" +
