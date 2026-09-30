@@ -35,6 +35,10 @@
       "</div>";
 
     if (s.kind === "brand") {
+      // illustration (e.g. pencil sketch) takes priority over the face-icon row
+      if (s.illustration) {
+        return '<div class="hs-illust" aria-hidden="true"><img src="' + esc(s.illustration) + '" alt="" loading="lazy" decoding="async"></div>' + body;
+      }
       var faces = (s.faces || []).map(function (n) {
         return '<span><img src="assets/webp/' + esc(n) + '_face.webp" alt="" loading="lazy"></span>';
       }).join("");
@@ -55,7 +59,7 @@
 
     var track = '<div class="hs-track">' + slides.map(function (s, i) {
       var ext = s.external;
-      return '<a class="hs-slide hs--' + (s.kind === "brand" ? "brand" : "image") + (i === 0 ? " is-active" : "") + '"' +
+      return '<a class="hs-slide hs--' + (s.kind === "brand" ? "brand" : "image") + (s.illustration ? " hs--illust" : "") + (i === 0 ? " is-active" : "") + '"' +
         ' href="' + esc(s.href) + '"' +
         (ext ? ' target="_blank" rel="noopener"' : "") +
         ' data-i="' + i + '"' +

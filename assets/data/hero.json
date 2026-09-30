@@ -60,7 +60,7 @@
         "",
         "SuccuChanの6人と、まだ知らない「好き」を増やしてみませんか。"
       ],
-      "faces": ["rina", "hika", "koto", "mayu", "aya", "ray"],
+      "illustration": "assets/webp/hero-create-together-rina.webp",
       "cta": "CREATE TOGETHER",
       "href": "fan-creation.html"
     }
