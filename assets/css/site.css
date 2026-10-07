@@ -821,3 +821,17 @@ main{display:block}
   .hs--illust::after{background:linear-gradient(to top,rgba(239,237,234,.98) 0%,rgba(239,237,234,.93) 46%,rgba(239,237,234,0) 66%)}
   .hs-illust{right:-10%;height:64%}
 }
+
+/* ============================================================
+   HOME · LATEST ON X — hand-picked posts (3-up desktop / 1-up mobile)
+   ============================================================ */
+.x-posts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(16px,2vw,26px);align-items:start}
+.x-post{min-width:0}
+.x-post .twitter-tweet{margin:0 auto!important;max-width:100%!important}
+/* X のスクリプトが描画する前（または描画できない場合）はリンクカードとして見せる */
+.x-post blockquote.twitter-tweet{display:flex;align-items:center;justify-content:center;min-height:180px;padding:24px;
+  background:#fff;border:1px solid var(--hairline);border-radius:var(--r-lg);box-shadow:var(--shadow-sm);text-align:center}
+.x-post blockquote.twitter-tweet a{font-family:var(--font-jp-head);font-weight:700;font-size:var(--fs-sm);color:var(--violet)}
+@media (max-width:900px){
+  .x-posts{grid-template-columns:1fr;max-width:550px;margin-inline:auto}
+}

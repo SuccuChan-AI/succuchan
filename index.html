@@ -16,11 +16,12 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,900&family=Archivo:wght@500;600;700;800&family=Zen+Kaku+Gothic+New:wght@500;700;900&family=Noto+Sans+JP:wght@400;500;700&family=Parisienne&display=swap" rel="stylesheet">
 <link rel="preload" as="image" href="assets/webp/hero-keyvisual.webp" fetchpriority="high">
-<link rel="stylesheet" href="assets/css/tokens.css?v=20260930a">
-<link rel="stylesheet" href="assets/css/site.css?v=20260930a">
-<script defer src="assets/js/site.js?v=20260930a"></script>
-<script defer src="assets/js/members.js?v=20260930a"></script>
-<script defer src="assets/js/hero.js?v=20260930a"></script>
+<link rel="stylesheet" href="assets/css/tokens.css?v=20261007a">
+<link rel="stylesheet" href="assets/css/site.css?v=20261007a">
+<script defer src="assets/js/site.js?v=20261007a"></script>
+<script defer src="assets/js/members.js?v=20261007a"></script>
+<script defer src="assets/js/hero.js?v=20261007a"></script>
+<script defer src="assets/js/xposts.js?v=20261007a"></script>
 </head>
 <body>
 <main class="page home">
@@ -145,6 +146,20 @@
       <a class="home-banner" href="fan-creation.html" aria-label="CREATE TOGETHER へ">
         <img src="assets/webp/banners/create-together.webp" alt="CREATE TOGETHER — 描く。作る。連れていく。あなたの好きな人間界へ、SuccuChanを。" loading="lazy" decoding="async">
       </a>
+    </div>
+  </section>
+
+  <!-- LATEST ON X (手動で選んだポスト最大3件。x-posts.json が空なら非表示) -->
+  <section class="sect" id="x-latest" data-xposts hidden>
+    <div class="container">
+      <div class="sect-head">
+        <div>
+          <span class="eyebrow">Follow</span>
+          <h2 class="sect-title" style="margin-top:14px">LATEST ON X<span class="jp">サキュちゃんたちの、いまの投稿</span></h2>
+        </div>
+        <a class="btn btn--ghost" data-xposts-more href="https://x.com/SuccuChan_AI" target="_blank" rel="noopener">Xでもっと見る <span class="arw">→</span></a>
+      </div>
+      <div class="x-posts" data-xposts-grid></div>
     </div>
   </section>
 
