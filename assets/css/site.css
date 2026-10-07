@@ -821,17 +821,34 @@ main{display:block}
   .hs--illust::after{background:linear-gradient(to top,rgba(239,237,234,.98) 0%,rgba(239,237,234,.93) 46%,rgba(239,237,234,0) 66%)}
   .hs-illust{right:-10%;height:64%}
 }
-
 /* ============================================================
-   HOME · LATEST ON X — hand-picked posts (3-up desktop / 1-up mobile)
+   HOME · LATEST ON X — latest posts as the site's own cards
+   (data: assets/data/x-posts.json / no X widget script)
    ============================================================ */
-.x-posts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(16px,2vw,26px);align-items:start}
-.x-post{min-width:0}
-.x-post .twitter-tweet{margin:0 auto!important;max-width:100%!important}
-/* X のスクリプトが描画する前（または描画できない場合）はリンクカードとして見せる */
-.x-post blockquote.twitter-tweet{display:flex;align-items:center;justify-content:center;min-height:180px;padding:24px;
-  background:#fff;border:1px solid var(--hairline);border-radius:var(--r-lg);box-shadow:var(--shadow-sm);text-align:center}
-.x-post blockquote.twitter-tweet a{font-family:var(--font-jp-head);font-weight:700;font-size:var(--fs-sm);color:var(--violet)}
+.x-posts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(16px,2vw,26px);align-items:stretch}
+.x-card{display:flex;flex-direction:column;gap:14px;min-width:0;padding:clamp(18px,1.8vw,22px);background:#fff;
+  border:1px solid var(--hairline);border-radius:var(--r-lg);box-shadow:var(--shadow-sm);color:var(--ink);
+  transition:transform var(--dur) var(--ease),box-shadow var(--dur),border-color var(--dur)}
+.x-card:hover{transform:translateY(-3px);box-shadow:var(--shadow-md);border-color:var(--accent-line)}
+.x-card:focus-visible{outline:2px solid var(--violet);outline-offset:3px}
+.x-head{display:flex;align-items:center;gap:10px}
+.x-av{width:38px;height:38px;border-radius:50%;object-fit:cover;background:var(--mist);flex-shrink:0;display:block}
+.x-id{display:flex;flex-direction:column;min-width:0;line-height:1.3}
+.x-id b{font-family:var(--font-en);font-weight:800;font-size:var(--fs-sm)}
+.x-id span{font-family:var(--font-en);font-size:var(--fs-xs);color:var(--ink-55)}
+.x-logo{width:17px;height:17px;margin-left:auto;color:var(--ink);flex-shrink:0}
+.x-text{font-size:var(--fs-sm);line-height:1.8;color:var(--ink-80);white-space:pre-line;word-break:break-word;
+  display:-webkit-box;-webkit-line-clamp:6;-webkit-box-orient:vertical;overflow:hidden}
+.x-tag,.x-link{color:var(--violet);font-weight:500}
+.x-media{position:relative;display:block;border-radius:var(--r-md);overflow:hidden;background:var(--mist);aspect-ratio:16/10}
+.x-media img{width:100%;height:100%;object-fit:cover;object-position:center 22%;display:block}
+.x-play{position:absolute;inset:0;margin:auto;width:52px;height:52px;border-radius:50%;background:rgba(31,31,36,.7)}
+.x-play::after{content:"";position:absolute;left:21px;top:16px;border-left:15px solid #fff;border-top:10px solid transparent;border-bottom:10px solid transparent}
+.x-more{position:absolute;right:10px;bottom:10px;font-family:var(--font-en);font-weight:700;font-size:var(--fs-xs);color:#fff;
+  background:rgba(31,31,36,.65);border-radius:var(--r-pill);padding:3px 10px}
+.x-foot{margin-top:auto;display:flex;align-items:center;justify-content:space-between;gap:10px;padding-top:4px;
+  font-family:var(--font-en);font-size:var(--fs-xs);color:var(--ink-55)}
+.x-go{font-weight:700;letter-spacing:.06em;color:var(--violet)}
 @media (max-width:900px){
-  .x-posts{grid-template-columns:1fr;max-width:550px;margin-inline:auto}
+  .x-posts{grid-template-columns:1fr;max-width:560px;margin-inline:auto}
 }

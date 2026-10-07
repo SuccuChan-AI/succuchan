@@ -1,10 +1,49 @@
 {
-  "_note": "TOPの「LATEST ON X」に出すポスト。posts にポストURLを最大3つ貼るだけで表示（x.com / twitter.com どちらのURLでも可）。空のときはセクションごと非表示。",
+  "_note": "自動生成: 04_WEBSITE/tools/x_latest_to_site.py。TOPの LATEST ON X に表示（Xのスクリプト不使用）。",
   "profile": "https://x.com/SuccuChan_AI",
+  "account": {
+    "name": "SuccuChan / サキュちゃん😈",
+    "username": "SuccuChan_AI",
+    "avatar": "https://pbs.twimg.com/profile_images/2097929005551038464/ajsDFodi_bigger.jpg"
+  },
   "posts": [
-    "https://x.com/SuccuChan_AI/status/2107813460360970612",
-    "https://x.com/SuccuChan_AI/status/2107672859862876485",
-    "https://x.com/SuccuChan_AI/status/2107604885646778725"
+    {
+      "id": "2107813460360970612",
+      "url": "https://x.com/SuccuChan_AI/status/2107813460360970612",
+      "created_at": "2026-10-07T12:41:04.000Z",
+      "text": "スカパー急いで加入して観た🔵🔴\n楓喜選手リーグ戦でも観たいスーパーゴールにアシストに大活躍✨️\nダニさん初ゴール👏🇪🇸\n安斎選手さすが！\nテルさんにも待望のゴール👆️✨️\n怪我人多いけどここから連戦しっかり勝っていきたい！\n次は土曜日浦和戦🔥\n#fctokyo https://twitter.com/fctokyoofficial/status/2107801856017907850",
+      "media": []
+    },
+    {
+      "id": "2107672859862876485",
+      "url": "https://x.com/SuccuChan_AI/status/2107672859862876485",
+      "created_at": "2026-10-07T03:22:23.000Z",
+      "text": "最近、MCUにはまっててほぼ毎日１作品観てエンドゲームまでだいたいは観れたんだけど...\n12月のドゥームスデイまでに必修の作品知りたい🥺🎞️\nエンドゲーム後作品で観たシャン・チーは面白かった👊\nファンタスティック４は気になってる...\nマーベル好きな優しい方に届いて・・・🙏✨\n#MCU️",
+      "media": [
+        {
+          "type": "photo",
+          "src": "https://pbs.twimg.com/media/HT_zJ8Pa4AE3xIO.jpg?name=small",
+          "width": 1672,
+          "height": 941,
+          "alt": ""
+        }
+      ]
+    },
+    {
+      "id": "2107604885646778725",
+      "url": "https://x.com/SuccuChan_AI/status/2107604885646778725",
+      "created_at": "2026-10-06T22:52:16.000Z",
+      "text": "秋晴れ☀\n気持ちくて朝ランしてきた🏃\nみんな今日もファイトだよ🔥💪\n#AYA",
+      "media": [
+        {
+          "type": "photo",
+          "src": "https://pbs.twimg.com/media/HT-3WbZbsAEnnen.jpg?name=small",
+          "width": 1152,
+          "height": 2048,
+          "alt": ""
+        }
+      ]
+    }
   ],
-  "_updated": "2026-10-07"
+  "updated_at": "2026-10-07T13:09:04Z"
 }
