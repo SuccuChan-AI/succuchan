@@ -1,5 +1,10 @@
 {
   "_note": "TOPの「LATEST ON X」に出すポスト。posts にポストURLを最大3つ貼るだけで表示（x.com / twitter.com どちらのURLでも可）。空のときはセクションごと非表示。",
   "profile": "https://x.com/SuccuChan_AI",
-  "posts": []
+  "posts": [
+    "https://x.com/SuccuChan_AI/status/2107813460360970612",
+    "https://x.com/SuccuChan_AI/status/2107672859862876485",
+    "https://x.com/SuccuChan_AI/status/2107604885646778725"
+  ],
+  "_updated": "2026-10-07"
 }
