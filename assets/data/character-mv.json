@@ -18,7 +18,8 @@
           "youtubeId": "L9_cOmYoskE",
           "aspect": "4:5",
           "description": "音楽、ゲーム、映画、そしてSuccuChanのみんなとの日常。\n何でも出来るRINAが、それでもまだ探している「心が動くもの」。\nRINA自身の言葉と音楽で描く、初めての自己紹介MV。",
-          "credits": "Music / Produced by RINA"
+          "credits": "Music / Produced by RINA",
+          "poster": "assets/webp/media/rina-intro-ja.webp"
         },
         {
           "lang": "en",
@@ -36,7 +37,10 @@
         "kicker": "NEW CHARACTER MV",
         "name": "RINA",
         "title": "Character Introduction Rap",
-        "copy": ["何でも出来る。", "それでも、まだ探してる。"],
+        "copy": [
+          "何でも出来る。",
+          "それでも、まだ探してる。"
+        ],
         "description": "SuccuChanの音楽を作るRINAが、\n自分自身を言葉と音で紹介するCharacter MV。",
         "cta": "WATCH MV"
       }
