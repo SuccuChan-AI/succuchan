@@ -10,10 +10,11 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preconnect" href="https://i.ytimg.com">
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,900&family=Archivo:wght@500;600;700;800&family=Zen+Kaku+Gothic+New:wght@500;700;900&family=Noto+Sans+JP:wght@400;500;700&family=Parisienne&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/css/tokens.css?v=20261007b">
-<link rel="stylesheet" href="assets/css/site.css?v=20261007b">
-<script defer src="assets/js/site.js?v=20261007b"></script>
-<script defer src="assets/js/content.js?v=20261007b"></script>
+<link rel="stylesheet" href="assets/css/tokens.css?v=20261010a">
+<link rel="stylesheet" href="assets/css/site.css?v=20261010a">
+<script defer src="assets/js/site.js?v=20261010a"></script>
+<script defer src="assets/js/content.js?v=20261010a"></script>
+<script defer src="assets/js/charmv.js?v=20261010a"></script>
 </head>
 <body>
 <main class="page">
@@ -29,6 +30,14 @@
     <div class="container">
       <div class="media-featured" data-media-featured></div>
     </div>
+  </section>
+
+  <!-- CHARACTER MV (6人分を順次追加: assets/data/character-mv.json) -->
+  <section id="character-mv" data-charmv="all" hidden>
+    <div class="container" style="padding-top:clamp(40px,6vw,72px)">
+      <div class="sect-head"><div><span class="eyebrow">Character MV</span><h2 class="sect-title" style="margin-top:14px">CHARACTER MV<span class="jp">6人それぞれの、自己紹介MV</span></h2></div></div>
+    </div>
+    <div data-charmv-list></div>
   </section>
 
   <section class="sect--tight">
